@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <title><%= title %></title>
-	<link rel='stylesheet' href='/css/app.css' />
-	<link rel='stylesheet' href='/css/bootstrap.min.css' />
-	<script src="/lib/angular.min.js"></script>
-	<script src="/lib/angular-ui-router.min.js"></script>
-	<script src="js/bundle.js"></script>
-<body ng-app="app">
+<link rel="stylesheet" href="/css/app.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<script src="/lib/jquery-3.1.1.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/angular.min.js"></script>
+<script src="/lib/angular-ui-router.min.js"></script>
+<script src="js/bundle.js"></script>
+<body ng-app="eTRapp">
 
-
-	<div class="empty row" style="height:20px;">
-	</div>
+	<nav-component></nav-component>
 	
-	<div class="container" style="">
-		<div class="row" style="">
-			<h1>__Find Image</h1>
-			<br>
+	<div class="container-fluid" style="padding-left:40px">
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<h4 style="font-family:arial">Find Image</h4>
+			</div>
 		</div>
-		<div class="row" style="">
-			<div class="select-image col-md-3 col-sm-3 col-xs-4" 
-
-				style="float:left">
-				<b>by Tag</b>
+		<div class="row">
+			<div class="select-image col-md-3 col-sm-4 col-xs-4">
+				<span>by Annotation</span>
 
 				<select multiple class="form-control"
 					style="height:90%">
@@ -30,25 +29,39 @@
 					<option>Line Tag</option>
 					<option>Line Tag</option>
 					<option>Line Tag</option>
+					<option>Line Tag</option>
+					<option>Line Tag</option>
 				</select>
 			</div>
-			<div class="select-image col-md-3 col-sm-3 col-xs-4"
+			<div class="select-image col-md-2 col-sm-2 col-xs-4"
 				style="">
-				<b>by Name</b>
+				<span>by Number</span>
 				<select multiple class="form-control"
 					style="height:90%">
-					<option>Line Region</option>
-					<option>Line Region</option>
-					<option>Line Region</option>
-					<option>Line Region</option>
-					<option>Line Region</option>
-					<option>Line Region</option>
-				</select>
+					<option>42505</option>
+					<option>30133</option>
+					<option>31700</option>
+					<option>60239</option>
+					<option>39134</option>
+					<option>42210</option>
+				</select>	
 			</div>
-			<div class="select-image col-md-4 col-sm-3 col-sm-offset-1">
-				<b>Thumbnails</b>
+			<div class="thumbnails col-md-5 col-sm-5 col-sm-offset-1"
+				style="top:8px;">
+
 			</div>	
 		</div>
 	</div>
-
+	
+	<div class="footer">
+		<div class="container-fluid">
+			<div class="col-md-3 col-sm-4 col-sm-offset-">
+				<span><b></b></span>
+			</div>	
+			<div class="col-md-6 col-sm-9">
+				<p class="text-center">2016 Engert Lab<br>This work was supported by</p>
+			</div>
+		</div>
+	</div>
+	
 </body>

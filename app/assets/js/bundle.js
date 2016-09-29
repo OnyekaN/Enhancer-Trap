@@ -44,13 +44,27 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	//import uiRouter from 'angular-ui-router'
+	/* /app.js */
+	'use strict';
 
-	angular.module('app', [__webpack_require__(1)]);
+	var _angularUiRouter = __webpack_require__(1);
+
+	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
+
+	var _index = __webpack_require__(2);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(function () {
+		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).name;
+	})();
 
 	//don't forget to use "Controller.$inject = ['factory&||service']" for
+	//
 	//dependencies
+	//
 
 /***/ },
 /* 1 */
@@ -4632,6 +4646,133 @@
 	  .filter('isState', $IsStateFilter)
 	  .filter('includedByState', $IncludedByStateFilter);
 	})(window, window.angular);
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _index = __webpack_require__(3);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var common = angular.module('app.common', [_index2.default]).name;
+
+	exports.default = common;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* nav/index.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _navComponent = __webpack_require__(4);
+
+	var _navComponent2 = _interopRequireDefault(_navComponent);
+
+	var _navService = __webpack_require__(6);
+
+	var _navService2 = _interopRequireDefault(_navService);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Nav = angular.module('nav', []).component('navComponent', _navComponent2.default).service('NavService', _navService2.default).name;
+
+	exports.default = Nav;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* nav/nav.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _nav = __webpack_require__(5);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NavComponent = {
+		controller: _nav2.default,
+		template: '\n\t\t<nav class="navbar navbar-default" \n\t\taria-label="Page navigation">\n\t\t\t<div class="navbar-inner container-fluid">\n\t\t\t\t<div class="navbar-header pull-left">\n\t\t\t\t\t<h4>Enhancer Trap Line Browser</h4>\n\t\t\t\t</div>\n\t\t\t\t<div class="collapse navbar-collapse">\n\t\t\t\t\t<ul class="nav navbar-nav">\n\t\t\t\t\t\t<li ng-repeat="page in $ctrl.pages">\n\t\t\t\t\t\t\t<a href="{{page.link}}">\n\t\t\t\t\t\t\t\t{{page.name}}\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\t\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</nav>\n\t'
+	};
+
+	exports.default = NavComponent;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	/* nav/nav.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var NavController = function NavController(NavService) {
+		_classCallCheck(this, NavController);
+
+		this.pages = NavService.pages;
+	};
+
+	NavController.$inject = ['NavService'];
+
+	exports.default = NavController;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	/* nav/nav.service.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var NavService = function () {
+		function NavService() {
+			_classCallCheck(this, NavService);
+
+			this.pages = [{ name: 'Home', link: '#' }, { name: 'Line Viewer', link: '#' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
+		}
+
+		_createClass(NavService, [{
+			key: 'getActive',
+			value: function getActive() {
+				/* Return name of current active page based on current route */
+			}
+		}]);
+
+		return NavService;
+	}();
+	//NavService.$inject = ['$http', '$location']
+
+	exports.default = NavService;
 
 /***/ }
 /******/ ]);

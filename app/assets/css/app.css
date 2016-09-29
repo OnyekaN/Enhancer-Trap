@@ -1,14 +1,63 @@
+/*navbar*/
+
+.navbar-header h4 {
+	margin: 14px 20px 0 10px;
+}
+.navbar a {
+	color: #49c !important;
+}
+
+
+/*body*/
+
 body {
-  padding: 30px;
- 	foiffnt: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+
+/*selects & thumbnail*/
+
 .select-image {
-	height: 600px;
-	bborder-style: solid;
+	height: 500px;
+}
+.select-image span {
+	color: #666;
+	font-family: serif;
+	font-size: 0.8em;
+}
+.select-image option {
+	color: #000;
+	font-family: arial !important;
+}
+.thumbnails {
+	border: 1px solid #bbb;
+	border-radius: 4px; 
+	height: 650px;
 
 }
+
+
+
+/*footer*/
+
+.footer {
+	background-color: #fff;
+	border-top: 1px solid #888;
+	bottom: 0;
+	height: 60px;	
+	position: relative;
+	top: 100px;
+	width: 100%;
+}
+.footer div {
+	top: 10px;
+}
+.footer p {
+	color: #888;
+	font-size: 0.8em;
+}
+
