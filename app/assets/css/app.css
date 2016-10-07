@@ -1,17 +1,17 @@
 /*navbar*/
 
 .navbar-header h4 {
-	margin: 14px 20px 0 10px;
+	margin: 14px 20px 0 0;
 }
 .navbar a {
-	color: #49c !important;
+	color: #38c !important;
 }
 
 
 /*body*/
 
 body {
-
+	height: 100%;
 }
 
 a {
@@ -19,25 +19,48 @@ a {
 }
 
 
+/*main*/
+
+.main.container-fluid  {
+	min-height: calc(100vh - 90px);
+}
+
+.main.interface.row {
+	height:1000px;
+	min-height: 700px;
+}
+
+
 /*selects & thumbnail*/
 
-.select-image {
-	height: 500px;
+.select-image select {
+	height: 60%;
+	min-height: 400px;
 }
 .select-image span {
-	color: #666;
+	color: #000;
 	font-family: serif;
-	font-size: 0.8em;
+	font-size: 1em;
 }
 .select-image option {
-	color: #000;
-	font-family: arial !important;
+	color: #555;
+	font-family: serif !important;
+	font-size: 0.9em;
 }
 .thumbnails {
 	border: 1px solid #bbb;
-	border-radius: 4px; 
-	height: 650px;
+	border-radius: 4px;
+ 	height: 600px;
+	overflow: scroll;
+	padding: 20px;
+	top: 8px;
+}
 
+.thumbnails img {
+	border-radius: 0;
+	height: 360px;
+	margin-bottom: 20px; 
+	width: 140px;
 }
 
 
@@ -46,7 +69,7 @@ a {
 
 .footer {
 	background-color: #fff;
-	border-top: 1px solid #888;
+	border-top: 1px solid #48c;
 	bottom: 0;
 	height: 60px;	
 	position: relative;
@@ -57,7 +80,7 @@ a {
 	top: 10px;
 }
 .footer p {
-	color: #888;
+	color: #bbb;
 	font-size: 0.8em;
 }
 

@@ -1,10 +1,12 @@
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+	context: __dirname,
 	entry: './app/app.js',
 	output: {
 			path: path.join(__dirname, 'app/assets/js'),
-			filename: 'bundle.js'
+			filename: 'main.js'
 	},
 	module: {
 		loaders: [
@@ -17,5 +19,14 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new CopyWebpackPlugin([
+			{ context: 'app/common',
+				from: '**/*.html',
+				to: path.join(__dirname, 'app/assets/views')	}
+		],
+			{ copyUnmodified: false }
+		)
+	]
 };
