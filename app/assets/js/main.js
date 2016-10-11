@@ -4678,17 +4678,17 @@
 		value: true
 	});
 
-	var _navComponent = __webpack_require__(4);
+	var _nav = __webpack_require__(4);
 
-	var _navComponent2 = _interopRequireDefault(_navComponent);
+	var _nav2 = _interopRequireDefault(_nav);
 
-	var _navService = __webpack_require__(6);
+	var _nav3 = __webpack_require__(6);
 
-	var _navService2 = _interopRequireDefault(_navService);
+	var _nav4 = _interopRequireDefault(_nav3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Nav = angular.module('nav', []).component('navComponent', _navComponent2.default).service('NavService', _navService2.default).name;
+	var Nav = angular.module('nav', []).component('navComponent', _nav2.default).service('NavService', _nav4.default).name;
 
 	exports.default = Nav;
 

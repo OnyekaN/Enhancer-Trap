@@ -16,4 +16,4 @@ class NavService {
 }
 //NavService.$inject = ['$http', '$location']
 
-export default NavService;
+export default NavService
