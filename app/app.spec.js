@@ -1,16 +1,16 @@
 'use strict'
 
 describe('App', () => {
-	var navService
-	var router
+	let navService
+		, router
 
-	beforeEach(angular.mock.module('eTRapp'))	
+	beforeEach(module('eTRapp'))	
 
 	beforeEach(inject((NavService) => {
 		navService = NavService
 	}))
 
-	it('Should have a NavService service via Common', () => {
+	it('should have a NavService service', () => {
 		expect(navService).toBeDefined()
 	})
 })

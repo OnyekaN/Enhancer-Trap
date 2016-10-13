@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'ETrap' });
 });
 
-router.get('/lines', (req, res, next) => {
+router.get('/api/lines', (req, res, next) => {
 	Line.find((err, lines) => {
 		if (err) {return next(err);}
 		

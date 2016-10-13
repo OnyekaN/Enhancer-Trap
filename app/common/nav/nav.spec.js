@@ -1,15 +1,19 @@
+/* nav/nav.spec.js */
 'use strict'
 
 describe('nav-component', () => {
 	
-	beforeEach(module('eTRapp'))
+	beforeEach(module('eTRapp'), module('templates'))
+
 	let elm
 		,	scope
+	
 	beforeEach(inject(($rootScope, $compile) => {
-		elm = angular.element(`
-			<div>
-				<nav-component></nav-component>
-			</div>
+		elm = angular.element(
+			`
+				<div>
+					<nav-component></nav-component>
+				</div>
 			`
 		)
 		scope = $rootScope.$new()
@@ -27,8 +31,5 @@ describe('nav-component', () => {
 		let listElements = elm.find('li');
 		expect(listElements.length).toBeGreaterThan(0);
 	})
-
-
-
 	
 })

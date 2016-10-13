@@ -13,26 +13,36 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
 
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+/*
+    preprocessors: {
+			'**\/*.html': ['ng-html2js']
+    },
+*/
+
     // list of files / patterns to load in the browser
     files: [
 			'node_modules/angular/angular.js',
 			'node_modules/angular-mocks/angular-mocks.js',
       'app/**/*[Ss]pec.js',
-			'app/assets/js/bundle.js'
+			'app/assets/js/main.js',
+			'app/assets/views/**/*.html'
     ],
-
-
+/*
+		plugins: [
+			'karma-ng-html2js-preprocessor'
+		],
+*/
     // list of files to exclude
     exclude: [
     ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
-
+/*
+		ngHtml2JsPreprocessor: {
+			stripPrefix: 'app/assets/',
+			moduleName: 'templates'
+		},
+*/
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
