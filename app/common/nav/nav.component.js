@@ -7,5 +7,5 @@ const NavComponent = {
 	templateUrl: 'views/nav/nav.html'	
 }
 
-export default NavComponent;
+export default NavComponent
 

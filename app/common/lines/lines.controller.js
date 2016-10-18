@@ -3,8 +3,12 @@
 
 class LinesController {
 	constructor(LinesService) {
-		this.lines = LinesService.getLines()
-	}		
+		this.LinesService = LinesService	
+	}	
+	$onInit() {
+		this.lines = {}
+		this.LinesService.getLines().then(response => this.lines = response)
+	}
 }
 
 LinesController.$inject = ['LinesService']

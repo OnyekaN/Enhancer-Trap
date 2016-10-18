@@ -5,11 +5,9 @@ describe('LinesService', () => {
 
 	beforeEach(module('eTRapp'))
 
-	let scope
-		, linesService
+	let linesService
 
 	beforeEach(inject(($rootScope, LinesService) =>	{
-		scope = $rootScope.$new() 
 		linesService = LinesService
 	}))
 
@@ -23,3 +21,23 @@ describe('LinesService', () => {
 		console.log(a)
 	})
 })
+
+/*describe('LinesController', () => {
+
+	beforeEach(module('eTRapp'))
+
+	let elm
+		, scope
+		, linesCtrl
+
+	beforeEach(inject(($rootScope, $compile, LinesController) => {
+	
+	}))
+
+	it('should be defined', () => {
+		expect(linesCtrl).toBeDefined()
+		// fails
+	})
+
+})
+*/

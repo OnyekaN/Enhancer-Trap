@@ -51,9 +51,10 @@ a {
 	border: 1px solid #bbb;
 	border-radius: 4px;
  	height: 600px;
+	left: 40px;
 	overflow: scroll;
 	padding: 20px;
-	top: 8px;
+	top: 18px;
 }
 
 .thumbnails img {

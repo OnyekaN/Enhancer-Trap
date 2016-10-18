@@ -3,7 +3,7 @@
 
 describe('nav-component', () => {
 	
-	beforeEach(module('eTRapp'), module('templates'))
+	beforeEach(module('eTRapp'))
 
 	let elm
 		,	scope

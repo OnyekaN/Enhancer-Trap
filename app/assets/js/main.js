@@ -61,11 +61,6 @@
 		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).name;
 	})();
 
-	//don't forget to use "Controller.$inject = ['factory&||service']" for
-	//
-	//dependencies
-	//
-
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
@@ -4657,17 +4652,21 @@
 		value: true
 	});
 
-	var _index = __webpack_require__(3);
+	var _index = __webpack_require__(7);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _index3 = __webpack_require__(7);
+	var _index3 = __webpack_require__(3);
 
 	var _index4 = _interopRequireDefault(_index3);
 
+	var _index5 = __webpack_require__(11);
+
+	var _index6 = _interopRequireDefault(_index5);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var common = angular.module('app.common', [_index2.default, _index4.default]).name;
+	var common = angular.module('app.common', [_index2.default, _index4.default, _index6.default]).name;
 
 	exports.default = common;
 
@@ -4793,14 +4792,224 @@
 
 	var _lines2 = _interopRequireDefault(_lines);
 
+	var _lines3 = __webpack_require__(9);
+
+	var _lines4 = _interopRequireDefault(_lines3);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Lines = angular.module('lines', []).service('LinesService', _lines2.default).name;
+	var Lines = angular.module('lines', []).component('linesComponent', _lines4.default).service('LinesService', _lines2.default).name;
 
 	exports.default = Lines;
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	/* lines/lines.service.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesService = function () {
+		function LinesService($http) {
+			_classCallCheck(this, LinesService);
+
+			this.$http = $http;
+		}
+
+		_createClass(LinesService, [{
+			key: 'getLines',
+			value: function getLines() {
+				return this.$http.get('/api/lines').then(function (response) {
+					return response.data;
+				}).catch(function (e) {
+					return console.log(e);
+				});
+			}
+		}]);
+
+		return LinesService;
+	}();
+
+	LinesService.$inject = ['$http'];
+
+	exports.default = LinesService;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* lines/lines.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _lines = __webpack_require__(10);
+
+	var _lines2 = _interopRequireDefault(_lines);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LinesComponent = {
+		controller: _lines2.default,
+		templateUrl: 'views/lines/lines.html'
+	};
+
+	exports.default = LinesComponent;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	/* lines/lines.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesController = function () {
+		function LinesController(LinesService) {
+			_classCallCheck(this, LinesController);
+
+			this.LinesService = LinesService;
+		}
+
+		_createClass(LinesController, [{
+			key: '$onInit',
+			value: function $onInit() {
+				var _this = this;
+
+				this.lines = {};
+				this.LinesService.getLines().then(function (response) {
+					return _this.lines = response;
+				});
+			}
+		}]);
+
+		return LinesController;
+	}();
+
+	LinesController.$inject = ['LinesService'];
+
+	exports.default = LinesController;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* select/index.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _select = __webpack_require__(12);
+
+	var _select2 = _interopRequireDefault(_select);
+
+	var _lines = __webpack_require__(14);
+
+	var _lines2 = _interopRequireDefault(_lines);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Select = angular.module('select', []).component('selectComponent', _select2.default).service('LinesService', _lines2.default).name;
+
+	exports.default = Select;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* select/select.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _select = __webpack_require__(13);
+
+	var _select2 = _interopRequireDefault(_select);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var selectComponent = {
+		controller: _select2.default,
+		templateUrl: 'views/select/select.html'
+	};
+
+	exports.default = selectComponent;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	/* select/select.controller.js. */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var SelectController = function () {
+		function SelectController(LinesService) {
+			_classCallCheck(this, SelectController);
+
+			this.LinesService = LinesService;
+		}
+
+		_createClass(SelectController, [{
+			key: '$onInit',
+			value: function $onInit() {
+				var _this = this;
+
+				this.lineNumbers = [];
+				this.lineAnnotations = [];
+				this.LinesService.getLines().then(function (response) {
+					_this.lineNumbers = response.map(function (obj) {
+						return obj["Line Number"];
+					});
+					response.map(function (obj) {
+						return obj.Annotations.map(function (ann) {
+							if (_this.lineAnnotations.indexOf(ann) == -1) {
+								_this.lineAnnotations.push(ann);
+							}
+						});
+					});
+					_this.lineAnnotations.sort();
+				});
+			}
+		}]);
+
+		return SelectController;
+	}();
+
+	SelectController.$inject = ['LinesService'];
+
+	exports.default = SelectController;
+
+/***/ },
+/* 14 */
 /***/ function(module, exports) {
 
 	/* lines/lines.service.js */
