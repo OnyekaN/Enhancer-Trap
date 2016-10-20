@@ -1,7 +1,7 @@
 /* lines/lines.service.js */
 'use strict'
 
-class LinesService {
+class ThumbsService {
 	constructor($http) {
 		this.$http = $http;
 	}
@@ -14,4 +14,4 @@ class LinesService {
 
 LinesService.$inject = ['$http']
 
-export default LinesService
+//export default LinesService
