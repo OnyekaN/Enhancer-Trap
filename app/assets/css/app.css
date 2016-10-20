@@ -22,7 +22,7 @@ a {
 /*main*/
 
 .main.container-fluid  {
-	min-height: calc(100vh - 90px);
+	min-height: calc(95vh - 90px);
 }
 
 .main.interface.row {
@@ -50,7 +50,8 @@ a {
 .thumbnails {
 	border: 1px solid #bbb;
 	border-radius: 4px;
- 	height: 600px;
+ 	height: 1000px;
+	/*min-height: ~*/
 	left: 40px;
 	overflow: scroll;
 	padding: 20px;
@@ -74,7 +75,7 @@ a {
 	bottom: 0;
 	height: 60px;	
 	position: relative;
-	top: 100px;
+	top: 50px;
 	width: 100%;
 }
 .footer div {
