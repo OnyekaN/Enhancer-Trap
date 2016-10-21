@@ -7,20 +7,21 @@ const Lines = angular
 	.module('lines', [])
 	.component('linesComponent', LinesComponent)
 	.service('LinesService', LinesService)
-	.config(($stateProvider, $urlRouterProvider) => {
+	.config(($stateProvider) => {
 		'ng-inject'
 			$stateProvider
-				.state('lines', { 
-					url: '/',
-					templateUrl: 'views/lines/lines.html',
-					controller: 'LinesControl as vm',
+				.state('lines', {
+					url: '/views/lines',
+					component: 'LinesComponent',
 					resolve: { 
-						allLines: function(LinesService) {
+						dallLines: LinesService => {
 							return LinesService.getLines()
 						}
-					}
-			})
+					},
+					controller: 'LinesController'	
+				})	
 	})
 	.name
 
 export default Lines
+

@@ -2,9 +2,11 @@
 'use strict'
 
 class SelectController {
-	constructor(LinesService) {
+	constructor(LinesService, $scope) {
 		this.LinesService = LinesService	
+		this.$scope = $scope
 	}
+
 	$onInit() {
 		this.lineNumbers = []
 		this.lineAnnotations = []
@@ -16,10 +18,20 @@ class SelectController {
 																									}
 																							}))
 												this.lineAnnotations.sort()})
+
+		this.$scope.$watch('selectedAnnotations', this.selectionChanged())
+		this.$scope.$watch('selectedLineNumbers', this.selectionChanged())
 	}
+	
+	selectionChanged(newVal, oldVal) {
+		return (newVal, oldVal) => {
+			this.$scope.$parent.$broadcast('selectionChange', newVal)
+		}	
+	}
+
 }
 
-SelectController.$inject = ['LinesService']
+SelectController.$inject = ['LinesService', '$scope']
 
 export default SelectController
 

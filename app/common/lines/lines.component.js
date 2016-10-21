@@ -4,6 +4,8 @@
 import LinesController from './lines.controller'
 
 const LinesComponent = {
+	bindings: {
+	},
 	controller: LinesController,
 	templateUrl: 'views/lines/lines.html'
 }

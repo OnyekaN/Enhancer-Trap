@@ -4656,15 +4656,15 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _index3 = __webpack_require__(4);
+	var _index3 = __webpack_require__(7);
 
 	var _index4 = _interopRequireDefault(_index3);
 
-	var _index5 = __webpack_require__(8);
+	var _index5 = __webpack_require__(11);
 
 	var _index6 = _interopRequireDefault(_index5);
 
-	var _index7 = __webpack_require__(11);
+	var _index7 = __webpack_require__(14);
 
 	var _index8 = _interopRequireDefault(_index7);
 
@@ -4685,28 +4685,28 @@
 		value: true
 	});
 
-	var _lines = __webpack_require__(14);
+	var _lines = __webpack_require__(4);
 
 	var _lines2 = _interopRequireDefault(_lines);
 
-	var _lines3 = __webpack_require__(15);
+	var _lines3 = __webpack_require__(5);
 
 	var _lines4 = _interopRequireDefault(_lines3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Lines = angular.module('lines', []).component('linesComponent', _lines4.default).service('LinesService', _lines2.default).config(function ($stateProvider, $urlRouterProvider) {
+	var Lines = angular.module('lines', []).component('linesComponent', _lines4.default).service('LinesService', _lines2.default).config(function ($stateProvider) {
 		'ng-inject';
 
 		$stateProvider.state('lines', {
-			url: '/',
-			templateUrl: 'views/lines/lines.html',
-			controller: 'LinesControl as vm',
+			url: '/views/lines',
+			component: 'LinesComponent',
 			resolve: {
-				allLines: function allLines(LinesService) {
+				dallLines: function dallLines(LinesService) {
 					return LinesService.getLines();
 				}
-			}
+			},
+			controller: 'LinesController'
 		});
 	}).name;
 
@@ -4714,300 +4714,6 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* nav/index.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _nav = __webpack_require__(5);
-
-	var _nav2 = _interopRequireDefault(_nav);
-
-	var _nav3 = __webpack_require__(7);
-
-	var _nav4 = _interopRequireDefault(_nav3);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Nav = angular.module('nav', []).component('navComponent', _nav2.default).service('NavService', _nav4.default).name;
-
-	exports.default = Nav;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* nav/nav.component.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _nav = __webpack_require__(6);
-
-	var _nav2 = _interopRequireDefault(_nav);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var NavComponent = {
-		controller: _nav2.default,
-		templateUrl: 'views/nav/nav.html'
-	};
-
-	exports.default = NavComponent;
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	/* nav/nav.controller.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var NavController = function NavController(NavService) {
-		_classCallCheck(this, NavController);
-
-		this.pages = NavService.pages;
-	};
-
-	NavController.$inject = ['NavService'];
-
-	exports.default = NavController;
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	/* nav/nav.service.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var NavService = function () {
-		function NavService() {
-			_classCallCheck(this, NavService);
-
-			this.pages = [{ name: 'Home', link: '#' }, { name: 'Line Viewer', link: '#' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
-		}
-
-		_createClass(NavService, [{
-			key: 'getActive',
-			value: function getActive() {
-				/* Return name of current active page based on current route */
-			}
-		}]);
-
-		return NavService;
-	}();
-	//NavService.$inject = ['$http', '$location']
-
-	exports.default = NavService;
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* select/index.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _select = __webpack_require__(9);
-
-	var _select2 = _interopRequireDefault(_select);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Select = angular.module('select', []).component('selectComponent', _select2.default).name;
-
-	exports.default = Select;
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* select/select.component.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _select = __webpack_require__(10);
-
-	var _select2 = _interopRequireDefault(_select);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var selectComponent = {
-		bindings: {
-			lines: '<'
-		},
-		controller: _select2.default,
-		templateUrl: 'views/select/select.html'
-	};
-
-	exports.default = selectComponent;
-
-/***/ },
-/* 10 */
-/***/ function(module, exports) {
-
-	/* select/select.controller.js. */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var SelectController = function () {
-		function SelectController(LinesService) {
-			_classCallCheck(this, SelectController);
-
-			this.LinesService = LinesService;
-		}
-
-		_createClass(SelectController, [{
-			key: '$onInit',
-			value: function $onInit() {
-				var _this = this;
-
-				this.lineNumbers = [];
-				this.lineAnnotations = [];
-				this.LinesService.getLines().then(function (response) {
-					_this.lineNumbers = response.map(function (obj) {
-						return obj["Line Number"];
-					});
-					response.map(function (obj) {
-						return obj.Annotations.map(function (ann) {
-							if (_this.lineAnnotations.indexOf(ann) == -1) {
-								_this.lineAnnotations.push(ann);
-							}
-						});
-					});
-					_this.lineAnnotations.sort();
-				});
-			}
-		}]);
-
-		return SelectController;
-	}();
-
-	SelectController.$inject = ['LinesService'];
-
-	exports.default = SelectController;
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* thumbs/index.js */
-	'use strict';
-	//import Service from './lines.service'
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _thumbs = __webpack_require__(12);
-
-	var _thumbs2 = _interopRequireDefault(_thumbs);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Thumbs = angular.module('thumbs', []).component('thumbsComponent', _thumbs2.default)
-	//.service('LinesService', LinesService)
-	.name;exports.default = Thumbs;
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* thumbs/thumbs.component.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _thumbs = __webpack_require__(13);
-
-	var _thumbs2 = _interopRequireDefault(_thumbs);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ThumbsComponent = {
-		controller: _thumbs2.default,
-		templateUrl: 'views/thumbs/thumbs.html'
-	};
-
-	exports.default = ThumbsComponent;
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	/* thumbs/thumbs.controller.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var ThumbsController = function () {
-		function ThumbsController(LinesService) {
-			_classCallCheck(this, ThumbsController);
-
-			this.LinesService = LinesService;
-		}
-
-		_createClass(ThumbsController, [{
-			key: '$onInit',
-			value: function $onInit() {
-				var _this = this;
-
-				this.lines = {};
-				this.LinesService.getLines().then(function (response) {
-					return _this.lines = response;
-				});
-			}
-		}]);
-
-		return ThumbsController;
-	}();
-
-	ThumbsController.$inject = ['LinesService'];
-
-	exports.default = ThumbsController;
-
-/***/ },
-/* 14 */
 /***/ function(module, exports) {
 
 	/* lines/lines.service.js */
@@ -5047,7 +4753,7 @@
 	exports.default = LinesService;
 
 /***/ },
-/* 15 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* lines/lines.component.js */
@@ -5057,13 +4763,14 @@
 		value: true
 	});
 
-	var _lines = __webpack_require__(16);
+	var _lines = __webpack_require__(6);
 
 	var _lines2 = _interopRequireDefault(_lines);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var LinesComponent = {
+		bindings: {},
 		controller: _lines2.default,
 		templateUrl: 'views/lines/lines.html'
 	};
@@ -5071,7 +4778,7 @@
 	exports.default = LinesComponent;
 
 /***/ },
-/* 16 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/* lines/lines.controller.js */
@@ -5089,6 +4796,8 @@
 		function LinesController(LinesService) {
 			_classCallCheck(this, LinesController);
 
+			this.allLines = {};
+			this.displayLines = {};
 			this.LinesService = LinesService;
 		}
 
@@ -5097,9 +4806,6 @@
 			value: function $onInit() {
 				var _this = this;
 
-				this.allLines = {};
-				this.random = 'random';
-				this.displayLines = {};
 				this.LinesService.getLines().then(function (response) {
 					return _this.allLines = response;
 				});
@@ -5112,6 +4818,326 @@
 	LinesController.$inject = ['LinesService'];
 
 	exports.default = LinesController;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* nav/index.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _nav = __webpack_require__(8);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
+	var _nav3 = __webpack_require__(10);
+
+	var _nav4 = _interopRequireDefault(_nav3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Nav = angular.module('nav', []).component('navComponent', _nav2.default).service('NavService', _nav4.default).name;
+
+	exports.default = Nav;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* nav/nav.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _nav = __webpack_require__(9);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NavComponent = {
+		controller: _nav2.default,
+		templateUrl: 'views/nav/nav.html'
+	};
+
+	exports.default = NavComponent;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	/* nav/nav.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var NavController = function NavController(NavService) {
+		_classCallCheck(this, NavController);
+
+		this.pages = NavService.pages;
+	};
+
+	NavController.$inject = ['NavService'];
+
+	exports.default = NavController;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	/* nav/nav.service.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var NavService = function () {
+		function NavService() {
+			_classCallCheck(this, NavService);
+
+			this.pages = [{ name: 'Home', link: '#' }, { name: 'Line Viewer', link: '#' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
+		}
+
+		_createClass(NavService, [{
+			key: 'getActive',
+			value: function getActive() {
+				/* Return name of current active page based on current route */
+			}
+		}]);
+
+		return NavService;
+	}();
+	//NavService.$inject = ['$http', '$location']
+
+	exports.default = NavService;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* select/index.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _select = __webpack_require__(12);
+
+	var _select2 = _interopRequireDefault(_select);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Select = angular.module('select', []).component('selectComponent', _select2.default).name;
+
+	exports.default = Select;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* select/select.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _select = __webpack_require__(13);
+
+	var _select2 = _interopRequireDefault(_select);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var selectComponent = {
+		bindings: {},
+		controller: _select2.default,
+		templateUrl: 'views/select/select.html'
+	};
+
+	exports.default = selectComponent;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	/* select/select.controller.js. */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var SelectController = function () {
+		function SelectController(LinesService, $scope) {
+			_classCallCheck(this, SelectController);
+
+			this.LinesService = LinesService;
+			this.$scope = $scope;
+		}
+
+		_createClass(SelectController, [{
+			key: '$onInit',
+			value: function $onInit() {
+				var _this = this;
+
+				this.lineNumbers = [];
+				this.lineAnnotations = [];
+				this.LinesService.getLines().then(function (response) {
+					_this.lineNumbers = response.map(function (obj) {
+						return obj["Line Number"];
+					});
+					response.map(function (obj) {
+						return obj.Annotations.map(function (ann) {
+							if (_this.lineAnnotations.indexOf(ann) == -1) {
+								_this.lineAnnotations.push(ann);
+							}
+						});
+					});
+					_this.lineAnnotations.sort();
+				});
+
+				this.$scope.$watch('selectedAnnotations', this.selectionChanged());
+				this.$scope.$watch('selectedLineNumbers', this.selectionChanged());
+			}
+		}, {
+			key: 'selectionChanged',
+			value: function selectionChanged(newVal, oldVal) {
+				var _this2 = this;
+
+				return function (newVal, oldVal) {
+					_this2.$scope.$parent.$broadcast('selectionChange', newVal);
+				};
+			}
+		}]);
+
+		return SelectController;
+	}();
+
+	SelectController.$inject = ['LinesService', '$scope'];
+
+	exports.default = SelectController;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* thumbs/index.js */
+	'use strict';
+	//import Service from './lines.service'
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _thumbs = __webpack_require__(15);
+
+	var _thumbs2 = _interopRequireDefault(_thumbs);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Thumbs = angular.module('thumbs', []).component('thumbsComponent', _thumbs2.default)
+	//.service('LinesService', LinesService)
+	.name;exports.default = Thumbs;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* thumbs/thumbs.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _thumbs = __webpack_require__(16);
+
+	var _thumbs2 = _interopRequireDefault(_thumbs);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ThumbsComponent = {
+		controller: _thumbs2.default,
+		templateUrl: 'views/thumbs/thumbs.html'
+	};
+
+	exports.default = ThumbsComponent;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	/* thumbs/thumbs.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var ThumbsController = function () {
+		function ThumbsController($scope, LinesService) {
+			_classCallCheck(this, ThumbsController);
+
+			this.LinesService = LinesService;
+			this.$scope = $scope;
+		}
+
+		_createClass(ThumbsController, [{
+			key: '$onInit',
+			value: function $onInit() {
+				var _this = this;
+
+				this.allLines = {};
+				this.displayLines = {};
+				this.LinesService.getLines().then(function (response) {
+					return _this.allLines = _this.displayLines = response;
+				});
+				this.$scope.$on('selectionChange', function (event, data) {
+					if (data == "") {
+						return _this.displayLines = _this.allLines;
+					} else {
+						return _this.displayLines = _this.allLines.filter(function (obj) {
+							for (var item in data) {
+								if (obj.Annotations.indexOf(data[item]) != -1 || obj['Line Number'] == data[item]) {
+									return true;
+								}
+							}
+						});
+					}
+				});
+			}
+		}]);
+
+		return ThumbsController;
+	}();
+
+	ThumbsController.$inject = ['$scope', 'LinesService'];
+
+	exports.default = ThumbsController;
 
 /***/ }
 /******/ ]);

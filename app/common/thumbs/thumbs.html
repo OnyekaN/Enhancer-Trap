@@ -1,8 +1,13 @@
 <!--thumbs.html-->
 <div>
-	<div ng-repeat="line in $ctrl.lines">
-		<h3>{{ line["Line Number"] }}</h3>
-		<img ng-src="{{ line.JPEG }}" alt="Line JPEG image"></img>
+	<div ng-repeat="line in $ctrl.displayLines">
+		<h3>{{::line["Line Number"]}}</h3>
+		<span>
+			<img style="display:inline"ng-src="{{::line.JPEG}}" alt="Line JPEG image"></img>
+			<!--ul style="display:inline;font-family:serif">
+				<li ng-repeat="Ann in line.Annotations">{{::Ann}}</li>
+			</ul-->
+		</span>
 	</div>
 </div>
 

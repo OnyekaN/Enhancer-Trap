@@ -5,7 +5,6 @@ class SelectController {
 	constructor() {
 	}	
 	$onInit() {
-		console.log(this.lines)
 	}
 
 }
