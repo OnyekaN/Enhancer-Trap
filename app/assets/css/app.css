@@ -12,6 +12,7 @@
 
 body {
 	height: 100%;
+	position: relative;
 }
 
 a {
@@ -50,19 +51,20 @@ a {
 .thumbnails {
 	border: 1px solid #bbb;
 	border-radius: 4px;
- 	height: 1000px;
+ 	height: 900px;
 	/*min-height: ~*/
 	left: 40px;
 	overflow: scroll;
 	padding: 20px;
-	top: 18px;
+	margin-top: 18px;
+	margin-bottom:50px;
 }
 
 .thumbnails img {
 	border-radius: 0;
-	height: 360px;
+	height: 160px;
 	margin-bottom: 20px; 
-	width: 140px;
+	width: 405px;
 }
 
 
@@ -85,4 +87,41 @@ a {
 	color: #bbb;
 	font-size: 0.8em;
 }
+
+
+/* lines-viewer */
+
+.row.top {
+	height: 30px;
+}
+
+.lines-viewer {
+	margin-bottom: 40px;
+}
+.lines-viewer img {
+	height: 300px;
+	width: 950px:
+}
+
+.lines-info #annotations-title {
+	font-size: 1.4em;
+}
+.lines-info #buttons {
+	margin-left: 110px;
+}
+.lines-info #buttons span {
+	font-family: sans-serif;
+	margin-right: 10px;
+}
+.lines-info ul {
+	color: #000;
+	font-family: serif;
+	font-size: 0.9em;
+	margin-left: -37px;
+	list-style-type: none;
+}
+.lines-info li {
+}
+
+
 

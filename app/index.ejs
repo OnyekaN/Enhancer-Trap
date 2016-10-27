@@ -11,19 +11,10 @@
 
 	<nav-component></nav-component>
 	
-	<div class="main container-fluid" style="">
+	<div class="main container-fluid">
 
-		<div class="row">
-			<div class="browse col-md-3 col-sm-4 col-xs-5">
-				<h2 style="font-family:arial;margin-left:14px;">Browse Lines</h2>
-			</div>
-		</div>
+		<ui-view></ui-view>		
 
-		<div class="empty row" style="height:10px;">
-		</div>
-
-		<lines-component></lines-component>
-	
 	</div>
 	
 	<div class="footer">
@@ -38,5 +29,19 @@
 
 		</div>
 	</div>
+	
+
+	<script type="text/ng-template" id="/home.html">
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-5">
+				<h2 style="font-family:arial;margin-left:14px;">Browse Lines</h2>
+			</div>
+		</div>
+
+		<div class="empty row" style="height:10px;">
+		</div>
+
+		<lines-component></lines-component>
+	</script>
 	
 </body>

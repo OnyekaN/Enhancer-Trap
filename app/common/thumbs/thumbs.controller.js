@@ -10,14 +10,14 @@ class ThumbsController {
 		this.allLines = {}
 		this.displayLines = {}
 		this.LinesService.getLines().then(response => this.allLines = this.displayLines = response)
-		this.$scope.$on('selectionChange', (event, data) => {
-			if (data == "") {
+		this.$scope.$on('selectionChange', (event, selections) => {
+			if (selections == "" || selections === undefined) {
 				return this.displayLines = this.allLines	
 			}	
 			else {
 				return this.displayLines = this.allLines.filter(obj => {
-					for ( let item in data ) {	
-						if ( obj.Annotations.indexOf(data[item]) != -1 || obj['Line Number'] == data[item]) {
+					for ( let item in selections ) {	
+						if ( obj.Annotations.indexOf(selections[item]) != -1 || obj['Line Number'] == selections[item]) {
 							return true
 						}
 					}

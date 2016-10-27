@@ -4,8 +4,8 @@
 class NavService {
 	constructor() {
 		this.pages = [
-			{ name: 'Home', link: '#' },
-			{ name: 'Line Viewer', link: '#' },
+			{ name: 'Home', link: '/#/home' },
+			{ name: 'Line Viewer', link: '/#/lines-viewer' },
 			{ name: 'Engert Lab Website', link: '#' },
 			{ name: 'Z-Brain', link: '#' }
 		]

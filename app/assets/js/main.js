@@ -58,7 +58,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(function () {
-		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).name;
+		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+			$stateProvider.state('home', {
+				url: '/home',
+				templateUrl: '/home.html'
+			});
+			$urlRouterProvider.when('/', '/home');
+			$urlRouterProvider.otherwise('/home');
+		}]).name;
 	})();
 
 /***/ },
@@ -4660,7 +4667,7 @@
 
 	var _index4 = _interopRequireDefault(_index3);
 
-	var _index5 = __webpack_require__(11);
+	var _index5 = __webpack_require__(10);
 
 	var _index6 = _interopRequireDefault(_index5);
 
@@ -4668,9 +4675,13 @@
 
 	var _index8 = _interopRequireDefault(_index7);
 
+	var _index9 = __webpack_require__(17);
+
+	var _index10 = _interopRequireDefault(_index9);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var common = angular.module('app.common', [_index2.default, _index4.default, _index6.default, _index8.default]).name;
+	var common = angular.module('app.common', [_index2.default, _index4.default, _index6.default, _index8.default, _index10.default]).name;
 
 	exports.default = common;
 
@@ -4689,71 +4700,18 @@
 
 	var _lines2 = _interopRequireDefault(_lines);
 
-	var _lines3 = __webpack_require__(5);
+	var _lines3 = __webpack_require__(6);
 
 	var _lines4 = _interopRequireDefault(_lines3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Lines = angular.module('lines', []).component('linesComponent', _lines4.default).service('LinesService', _lines2.default).config(function ($stateProvider) {
-		'ng-inject';
-
-		$stateProvider.state('lines', {
-			url: '/views/lines',
-			component: 'LinesComponent',
-			resolve: {
-				dallLines: function dallLines(LinesService) {
-					return LinesService.getLines();
-				}
-			},
-			controller: 'LinesController'
-		});
-	}).name;
+	var Lines = angular.module('lines', []).component('linesComponent', _lines2.default).service('LinesService', _lines4.default).name;
 
 	exports.default = Lines;
 
 /***/ },
 /* 4 */
-/***/ function(module, exports) {
-
-	/* lines/lines.service.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var LinesService = function () {
-		function LinesService($http) {
-			_classCallCheck(this, LinesService);
-
-			this.$http = $http;
-		}
-
-		_createClass(LinesService, [{
-			key: 'getLines',
-			value: function getLines() {
-				return this.$http.get('/api/lines').then(function (response) {
-					return response.data;
-				}).catch(function (e) {
-					return console.log(e);
-				});
-			}
-		}]);
-
-		return LinesService;
-	}();
-
-	LinesService.$inject = ['$http'];
-
-	exports.default = LinesService;
-
-/***/ },
-/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* lines/lines.component.js */
@@ -4763,7 +4721,7 @@
 		value: true
 	});
 
-	var _lines = __webpack_require__(6);
+	var _lines = __webpack_require__(5);
 
 	var _lines2 = _interopRequireDefault(_lines);
 
@@ -4778,7 +4736,7 @@
 	exports.default = LinesComponent;
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/* lines/lines.controller.js */
@@ -4820,7 +4778,156 @@
 	exports.default = LinesController;
 
 /***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	/* lines/lines.service.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesService = function () {
+		function LinesService($http) {
+			_classCallCheck(this, LinesService);
+
+			this.$http = $http;
+		}
+
+		_createClass(LinesService, [{
+			key: 'getLines',
+			value: function getLines() {
+				return this.$http.get('/api/lines').then(function (response) {
+					return response.data;
+				}).catch(function (e) {
+					return console.log(e);
+				});
+			}
+		}]);
+
+		return LinesService;
+	}();
+
+	LinesService.$inject = ['$http'];
+
+	exports.default = LinesService;
+
+/***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* lines-viewer/index.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _angularUiRouter = __webpack_require__(1);
+
+	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
+
+	var _linesViewer = __webpack_require__(8);
+
+	var _linesViewer2 = _interopRequireDefault(_linesViewer);
+
+	var _linesViewer3 = __webpack_require__(9);
+
+	var _linesViewer4 = _interopRequireDefault(_linesViewer3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LinesViewer = angular.module('LinesViewer', [_angularUiRouter2.default]).component('linesViewerComponent', _linesViewer2.default).service('LinesViewerService', _linesViewer4.default).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+		$stateProvider.state('lines-viewer', {
+			url: '/lines-viewer/{id}',
+			template: '<lines-viewer-component line-data="$resolve.line"></lines-viewer-component>',
+			resolve: {
+				line: ['$stateParams', 'LinesViewerService', function ($stateParams, LinesViewerService) {
+					console.log(LinesViewerService.getLine($stateParams.id));
+					return LinesViewerService.getLine($stateParams.id);
+				}]
+			}
+		});
+		$urlRouterProvider.otherwise('/');
+	}]).name;
+
+	exports.default = LinesViewer;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* lines-viewer/lines-viewer.component.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _linesViewer = __webpack_require__(20);
+
+	var _linesViewer2 = _interopRequireDefault(_linesViewer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LinesViewerComponent = {
+		bindings: {
+			lineData: '<'
+		},
+		controller: _linesViewer2.default,
+		templateUrl: 'views/lines-viewer/lines-viewer.html'
+	};
+
+	exports.default = LinesViewerComponent;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	/* lines-viewer/lines-viewer.service.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesViewerService = function () {
+		function LinesViewerService($http) {
+			_classCallCheck(this, LinesViewerService);
+
+			this.$http = $http;
+			this.line = undefined;
+		}
+
+		_createClass(LinesViewerService, [{
+			key: 'getLine',
+			value: function getLine(id) {
+				return this.$http.get('/api/' + id).then(function (response) {
+					return response.data;
+				}).catch(function (e) {
+					return console.log(e);
+				});
+			}
+		}]);
+
+		return LinesViewerService;
+	}();
+
+	LinesViewerService.$inject = ['$http'];
+
+	exports.default = LinesViewerService;
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* nav/index.js */
@@ -4830,11 +4937,11 @@
 		value: true
 	});
 
-	var _nav = __webpack_require__(8);
+	var _nav = __webpack_require__(11);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _nav3 = __webpack_require__(10);
+	var _nav3 = __webpack_require__(13);
 
 	var _nav4 = _interopRequireDefault(_nav3);
 
@@ -4845,7 +4952,7 @@
 	exports.default = Nav;
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* nav/nav.component.js */
@@ -4855,7 +4962,7 @@
 		value: true
 	});
 
-	var _nav = __webpack_require__(9);
+	var _nav = __webpack_require__(12);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -4869,7 +4976,7 @@
 	exports.default = NavComponent;
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports) {
 
 	/* nav/nav.controller.js */
@@ -4892,7 +4999,7 @@
 	exports.default = NavController;
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/* nav/nav.service.js */
@@ -4910,7 +5017,7 @@
 		function NavService() {
 			_classCallCheck(this, NavService);
 
-			this.pages = [{ name: 'Home', link: '#' }, { name: 'Line Viewer', link: '#' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
+			this.pages = [{ name: 'Home', link: '/#/home' }, { name: 'Line Viewer', link: '/#/lines-viewer' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
 		}
 
 		_createClass(NavService, [{
@@ -4927,7 +5034,7 @@
 	exports.default = NavService;
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* select/index.js */
@@ -4937,7 +5044,7 @@
 		value: true
 	});
 
-	var _select = __webpack_require__(12);
+	var _select = __webpack_require__(15);
 
 	var _select2 = _interopRequireDefault(_select);
 
@@ -4948,7 +5055,7 @@
 	exports.default = Select;
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* select/select.component.js */
@@ -4958,7 +5065,7 @@
 		value: true
 	});
 
-	var _select = __webpack_require__(13);
+	var _select = __webpack_require__(16);
 
 	var _select2 = _interopRequireDefault(_select);
 
@@ -4973,7 +5080,7 @@
 	exports.default = selectComponent;
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports) {
 
 	/* select/select.controller.js. */
@@ -5038,7 +5145,7 @@
 	exports.default = SelectController;
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* thumbs/index.js */
@@ -5049,7 +5156,7 @@
 		value: true
 	});
 
-	var _thumbs = __webpack_require__(15);
+	var _thumbs = __webpack_require__(18);
 
 	var _thumbs2 = _interopRequireDefault(_thumbs);
 
@@ -5060,7 +5167,7 @@
 	.name;exports.default = Thumbs;
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* thumbs/thumbs.component.js */
@@ -5070,7 +5177,7 @@
 		value: true
 	});
 
-	var _thumbs = __webpack_require__(16);
+	var _thumbs = __webpack_require__(19);
 
 	var _thumbs2 = _interopRequireDefault(_thumbs);
 
@@ -5084,7 +5191,7 @@
 	exports.default = ThumbsComponent;
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/* thumbs/thumbs.controller.js */
@@ -5116,13 +5223,13 @@
 				this.LinesService.getLines().then(function (response) {
 					return _this.allLines = _this.displayLines = response;
 				});
-				this.$scope.$on('selectionChange', function (event, data) {
-					if (data == "") {
+				this.$scope.$on('selectionChange', function (event, selections) {
+					if (selections == "" || selections === undefined) {
 						return _this.displayLines = _this.allLines;
 					} else {
 						return _this.displayLines = _this.allLines.filter(function (obj) {
-							for (var item in data) {
-								if (obj.Annotations.indexOf(data[item]) != -1 || obj['Line Number'] == data[item]) {
+							for (var item in selections) {
+								if (obj.Annotations.indexOf(selections[item]) != -1 || obj['Line Number'] == selections[item]) {
 									return true;
 								}
 							}
@@ -5138,6 +5245,43 @@
 	ThumbsController.$inject = ['$scope', 'LinesService'];
 
 	exports.default = ThumbsController;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	/* lines-viewer/lines-viewer.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesViewerController = function () {
+		function LinesViewerController(LinesViewerService) {
+			_classCallCheck(this, LinesViewerController);
+
+			this.line = this.lineData[0];
+			this.LinesViewerService = LinesViewerService;
+		}
+
+		_createClass(LinesViewerController, [{
+			key: '$onInit',
+			value: function $onInit() {
+				console.log(this.line);
+			}
+		}]);
+
+		return LinesViewerController;
+	}();
+
+	LinesViewerController.$inject = ['LinesViewerService'];
+
+	exports.default = LinesViewerController;
 
 /***/ }
 /******/ ]);

@@ -1,0 +1,43 @@
+<!--lines-viewer.html-->
+	<div class="row top">
+		</div>
+
+		<div class="row lines-viewer">
+			<div class="col-md-9 col-md-offset- col-sm-10 col-sm-offset-2">
+
+				<h2 style="font-family:sans-serif">
+					Line Number | <b>{{$ctrl.line["Line Number"]}}</b>
+				</h2><br>
+				<img ng-src="{{$ctrl.line.JPEG}}"
+					alt="Line JPEG image">
+				</img><br>
+
+			</div>
+		</div>
+		
+		<div class="row lines-info">
+			<div class="col-md-9 col-md-offset- col-sm-11 col-sm-offset-2">
+				
+				<div class="col-md-5 col-sm-7">
+					<span id="annotations-title">Annotations</span>	
+
+					<ul>
+						<br>
+						<li ng-repeat="ann in $ctrl.line.Annotations">{{ann}}</li>
+					</ul>	
+				</div>
+
+				<div class="col-md-4 col-sm-4">
+					<span id="buttons">
+						<span><a class="btn btn-primary" href="#" role="button">
+							Place Order</a>
+						</span>
+						<span><a class="btn btn-primary"
+							ng-href="{{$ctrl.line.TIF}}" role="button" download>
+							Download TIF</a>
+						</span>
+					</span>
+				</div>
+
+			</div>
+		</div>
