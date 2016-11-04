@@ -19,7 +19,10 @@ a {
   color: #00B7FF;
 }
 
+#title-search {
+	margin-left: 25px ;
 
+}
 /*main*/
 
 .main.container-fluid  {
@@ -46,7 +49,12 @@ a {
 .select-image option {
 	color: #555;
 	font-family: serif !important;
-	font-size: 0.9em;
+	font-size: 1em;
+}
+
+
+thumbs-component h4 {
+	color: #38c;
 }
 .thumbnails {
 	border: 1px solid #bbb;
@@ -66,8 +74,6 @@ a {
 	margin-bottom: 20px; 
 	width: 405px;
 }
-
-
 
 /*footer*/
 

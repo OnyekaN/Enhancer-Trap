@@ -13,7 +13,7 @@ class SelectController {
 		this.LinesService.getLines()
 			.then(response => { this.lineNumbers = response.map(obj => obj["Line Number"])
 												response.map(obj => obj.Annotations.map(
-																				ann => { if(this.lineAnnotations.indexOf(ann) == -1) {
+																				ann => { if(!~this.lineAnnotations.indexOf(ann)) {
 																									this.lineAnnotations.push(ann)
 																									}
 																							}))

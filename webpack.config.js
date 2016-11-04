@@ -1,12 +1,14 @@
+var webpack = require('webpack')
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var PROD = (process.env.NODE_ENV === 'production');
 
 module.exports = {
 	context: __dirname,
 	entry: './app/app.js',
 	output: {
 			path: path.join(__dirname, 'app/assets/js'),
-			filename: 'main.js'
+			filename: PROD ? 'main.min.js' : 'main.js'
 	},
 	module: {
 		loaders: [
@@ -27,6 +29,10 @@ module.exports = {
 				to: path.join(__dirname, 'app/assets/views')	}
 		],
 			{ copyUnmodified: false }
-		)
-	]
+		),
+		PROD && new webpack.optimize.UglifyJsPlugin({
+							compress: { warnings: false }	
+		}) 
+	].filter(Boolean),
+
 };

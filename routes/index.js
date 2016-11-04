@@ -3,9 +3,16 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Line = mongoose.model('Line');
 
+var app = express();
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'ETrap' });
+	if (app.get('env') === 'development') {	
+		res.render('index', { title: 'ETrap' });
+	}
+	if (app.get('env') === 'production') {
+		res.render('indexProd', { title: 'Enhancer Trap Website' });
+	}
 })
 
 router.get('/api/lines', (req, res, next) => {

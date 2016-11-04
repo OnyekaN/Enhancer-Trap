@@ -7,7 +7,6 @@ class LinesViewerController {
 		this.LinesViewerService = LinesViewerService
 	}	
 	$onInit() {
-		console.log(this.line)
 	}
 }
 

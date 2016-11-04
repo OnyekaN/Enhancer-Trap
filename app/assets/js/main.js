@@ -4667,15 +4667,15 @@
 
 	var _index4 = _interopRequireDefault(_index3);
 
-	var _index5 = __webpack_require__(10);
+	var _index5 = __webpack_require__(11);
 
 	var _index6 = _interopRequireDefault(_index5);
 
-	var _index7 = __webpack_require__(14);
+	var _index7 = __webpack_require__(15);
 
 	var _index8 = _interopRequireDefault(_index7);
 
-	var _index9 = __webpack_require__(17);
+	var _index9 = __webpack_require__(18);
 
 	var _index10 = _interopRequireDefault(_index9);
 
@@ -4836,7 +4836,7 @@
 
 	var _linesViewer2 = _interopRequireDefault(_linesViewer);
 
-	var _linesViewer3 = __webpack_require__(9);
+	var _linesViewer3 = __webpack_require__(10);
 
 	var _linesViewer4 = _interopRequireDefault(_linesViewer3);
 
@@ -4869,7 +4869,7 @@
 		value: true
 	});
 
-	var _linesViewer = __webpack_require__(20);
+	var _linesViewer = __webpack_require__(9);
 
 	var _linesViewer2 = _interopRequireDefault(_linesViewer);
 
@@ -4887,6 +4887,41 @@
 
 /***/ },
 /* 9 */
+/***/ function(module, exports) {
+
+	/* lines-viewer/lines-viewer.controller.js */
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var LinesViewerController = function () {
+		function LinesViewerController(LinesViewerService) {
+			_classCallCheck(this, LinesViewerController);
+
+			this.line = this.lineData[0];
+			this.LinesViewerService = LinesViewerService;
+		}
+
+		_createClass(LinesViewerController, [{
+			key: '$onInit',
+			value: function $onInit() {}
+		}]);
+
+		return LinesViewerController;
+	}();
+
+	LinesViewerController.$inject = ['LinesViewerService'];
+
+	exports.default = LinesViewerController;
+
+/***/ },
+/* 10 */
 /***/ function(module, exports) {
 
 	/* lines-viewer/lines-viewer.service.js */
@@ -4927,7 +4962,7 @@
 	exports.default = LinesViewerService;
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* nav/index.js */
@@ -4937,11 +4972,11 @@
 		value: true
 	});
 
-	var _nav = __webpack_require__(11);
+	var _nav = __webpack_require__(12);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _nav3 = __webpack_require__(13);
+	var _nav3 = __webpack_require__(14);
 
 	var _nav4 = _interopRequireDefault(_nav3);
 
@@ -4952,7 +4987,7 @@
 	exports.default = Nav;
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* nav/nav.component.js */
@@ -4962,7 +4997,7 @@
 		value: true
 	});
 
-	var _nav = __webpack_require__(12);
+	var _nav = __webpack_require__(13);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
@@ -4976,7 +5011,7 @@
 	exports.default = NavComponent;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/* nav/nav.controller.js */
@@ -4999,7 +5034,7 @@
 	exports.default = NavController;
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/* nav/nav.service.js */
@@ -5034,7 +5069,7 @@
 	exports.default = NavService;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* select/index.js */
@@ -5044,7 +5079,7 @@
 		value: true
 	});
 
-	var _select = __webpack_require__(15);
+	var _select = __webpack_require__(16);
 
 	var _select2 = _interopRequireDefault(_select);
 
@@ -5055,7 +5090,7 @@
 	exports.default = Select;
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* select/select.component.js */
@@ -5065,7 +5100,7 @@
 		value: true
 	});
 
-	var _select = __webpack_require__(16);
+	var _select = __webpack_require__(17);
 
 	var _select2 = _interopRequireDefault(_select);
 
@@ -5080,7 +5115,7 @@
 	exports.default = selectComponent;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/* select/select.controller.js. */
@@ -5115,7 +5150,7 @@
 					});
 					response.map(function (obj) {
 						return obj.Annotations.map(function (ann) {
-							if (_this.lineAnnotations.indexOf(ann) == -1) {
+							if (!~_this.lineAnnotations.indexOf(ann)) {
 								_this.lineAnnotations.push(ann);
 							}
 						});
@@ -5145,7 +5180,7 @@
 	exports.default = SelectController;
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* thumbs/index.js */
@@ -5156,7 +5191,7 @@
 		value: true
 	});
 
-	var _thumbs = __webpack_require__(18);
+	var _thumbs = __webpack_require__(19);
 
 	var _thumbs2 = _interopRequireDefault(_thumbs);
 
@@ -5167,7 +5202,7 @@
 	.name;exports.default = Thumbs;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* thumbs/thumbs.component.js */
@@ -5177,7 +5212,7 @@
 		value: true
 	});
 
-	var _thumbs = __webpack_require__(19);
+	var _thumbs = __webpack_require__(20);
 
 	var _thumbs2 = _interopRequireDefault(_thumbs);
 
@@ -5191,7 +5226,7 @@
 	exports.default = ThumbsComponent;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	/* thumbs/thumbs.controller.js */
@@ -5245,43 +5280,6 @@
 	ThumbsController.$inject = ['$scope', 'LinesService'];
 
 	exports.default = ThumbsController;
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	/* lines-viewer/lines-viewer.controller.js */
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var LinesViewerController = function () {
-		function LinesViewerController(LinesViewerService) {
-			_classCallCheck(this, LinesViewerController);
-
-			this.line = this.lineData[0];
-			this.LinesViewerService = LinesViewerService;
-		}
-
-		_createClass(LinesViewerController, [{
-			key: '$onInit',
-			value: function $onInit() {
-				console.log(this.line);
-			}
-		}]);
-
-		return LinesViewerController;
-	}();
-
-	LinesViewerController.$inject = ['LinesViewerService'];
-
-	exports.default = LinesViewerController;
 
 /***/ }
 /******/ ]);
