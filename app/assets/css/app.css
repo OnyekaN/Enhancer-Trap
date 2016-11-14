@@ -1,17 +1,24 @@
+html {
+	background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+}
+
 /*navbar*/
 
+.navbar {
+
+}
 .navbar-header h4 {
 	margin: 14px 20px 0 0px;
 }
 .navbar a {
-	color: #38c !important;
+	color: /* #38c */ !important;
 }
 
 
 /*body*/
 
 body {
-	height: 100%;
+	background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
 	position: relative;
 }
 
@@ -21,12 +28,13 @@ a {
 
 #title-search {
 	margin-left: 25px ;
-
+	padding-bottom: 30px;
 }
 /*main*/
 
 .main.container-fluid  {
 	min-height: calc(95vh - 90px);
+	padding: 10px 40px;
 }
 
 .main.interface.row {
@@ -38,18 +46,21 @@ a {
 /*selects & thumbnail*/
 
 .select-image select {
+	border: 1px solid transparent;
 	height: 60%;
-	min-height: 400px;
+	min-height: 200px;
+	padding-left: 30px;
 }
 .select-image span {
 	color: #000;
-	font-family: arial;
 	font-size: 1em;
 }
 .select-image option {
 	color: #555;
-	font-family: serif !important;
+	font-family: "Times New Roman", Times, Serif !important;
 	font-size: 1em;
+	padding-bottom: 0;
+	webkit-font-smoothing: antialiased;
 }
 
 
@@ -57,14 +68,15 @@ thumbs-component h4 {
 	color: #38c;
 }
 .thumbnails {
-	border: 1px solid #bbb;
+	background-color: transparent;
+	border: 1px solid transparent;
 	border-radius: 4px;
  	height: 900px;
 	/*min-height: ~*/
 	left: 40px;
 	overflow: scroll;
 	padding: 20px;
-	margin-top: 18px;
+	margin-top: 28px;
 	margin-bottom:50px;
 }
 
@@ -78,11 +90,10 @@ thumbs-component h4 {
 /*footer*/
 
 .footer {
-	background-color: #fff;
-	border-top: 1px solid #48c;
+	background-color: #eceaea;
+	border-top: 1px solid transparent;
 	bottom: 0;
 	height: 60px;	
-	position: relative;
 	top: 50px;
 	width: 100%;
 }
@@ -90,7 +101,7 @@ thumbs-component h4 {
 	top: 10px;
 }
 .footer p {
-	color: #bbb;
+	color: #ccc;
 	font-size: 0.8em;
 }
 

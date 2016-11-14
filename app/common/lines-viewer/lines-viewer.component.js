@@ -1,6 +1,6 @@
 /* lines-viewer/lines-viewer.component.js */
 'use strict'
-import LinesViewerController from './lines-viewer.controller'
+import LinesViewerController from './lines-viewer.controller';
 
 const LinesViewerComponent = {
 	bindings: {
@@ -10,4 +10,4 @@ const LinesViewerComponent = {
 	templateUrl: 'views/lines-viewer/lines-viewer.html'	
 }
 
-export default LinesViewerComponent
+export default LinesViewerComponent;
