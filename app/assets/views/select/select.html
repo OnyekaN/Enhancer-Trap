@@ -3,15 +3,15 @@
   <select multiple class="form-control" 
 		ng-model="selectedAnnotations" 
 		ng-options="ann for ann in $ctrl.lineAnnotations">
-		<option value="" style="font-size: 1em;">Any Annotation</option>
+		<option value="" style="font-size: em;">Any Annotation</option>
 	</select>
 </div>
-<div class="select-image col-md-2 col-sm-1 col-xs-5">
+<div class="select-image col-md-2 col-sm-2 col-xs-5">
 	<p class="text-center">By Line Number</p>
   <select multiple class="form-control" 
 		ng-model="selectedLineNumbers"
 		ng-options="num for num in $ctrl.lineNumbers">	
-		<option value="" style="font-size: 1em;">Any Line Number</option>
+		<option value="" style="font-size: em;">Any Line Number</option>
 	</select>
 </div>
 

@@ -5,7 +5,7 @@ html {
 /*navbar*/
 
 .navbar {
-	background-color: #fff !important;
+	background-color: #eee !important;
 	border: 1px solid transparent !important;
 	border-bottom: 1px solid #eee !important;
 	font-family: Helvetica;
@@ -13,11 +13,11 @@ html {
 }
 .navbar-header h4 {
 	font-family: "helvetica neue";
-	font-size: 1em;
+	font-size: 1.2em;
 	margin: 16px 20px 0 0px;
 }
 .navbar a {
-	color: /* #38c */ !important;
+	color:  #38c  !important;
 }
 
 
@@ -40,7 +40,7 @@ a {
 	font-size: 2.5em;
 	font-weight: normal;
 	margin-bottom: 30px;
-	margin-left: 25px ;
+	margin-left: 10px!important;
 	white-space: nowrap;
 }
 
@@ -68,14 +68,14 @@ a {
 	overflow: scroll;
 }
 .select-image p {
-	color: #bdd;
+	color: #ccc;
 	font-family: Helvetica;
 	ffont-family: "Helvetica Neue", sans-serif;
 	font-size: 1em;
 	font-style: normal;
 }
 .select-image option {
-	color: #333;
+	color: #555;
 	font-family: palatino !important;	
 	font-size: 0.9em;
 	webkit-font-smoothing: antialiased;
@@ -86,25 +86,31 @@ a {
 /*thumbnails*/
 
 .thumb {
-	bbackground-color: #fff;
+	background-color: #fff;
+	box-shadow: 3px 4px 4px #aaa;
+	margin: 1em 0.5em;
+	width: 430px;
+	padding: 1em 1em;
+	position: relative;
 }
 .thumb h4 {
 	color: #ccc;
 	font-family: helvetica;
 	font-size: 0.8em;
-	font-style: italic;
-	position:relative; 
-	left: 5px;
-	top: 32px;
+	font-style: italic; 
+	position: absolute;
+	left: 15px; top: 7px;
 }
 
 .thumbnails {
-	border: 1px solid transparent;
+	bbackground-color: white;
+	border: 1px solid #ddd;
 	border-radius: 5px;
  	height: 600px;
 	margin: 0em 1em !important;
 	overflow: scroll;
 }
+
 
 .thumbnails img {
 	bborder: 1px solid #000;
