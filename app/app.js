@@ -1,7 +1,7 @@
 /* /app.js */
 'use strict'
-import uiRouter from 'angular-ui-router'
-import Common from './common/index'
+import uiRouter from 'angular-ui-router';
+import Common from './common/index';
 
 (() => {
 	angular
@@ -12,16 +12,18 @@ import Common from './common/index'
 		.config([
 			'$stateProvider',
 			'$urlRouterProvider',
+			'$locationProvider',
 			($stateProvider, $urlRouterProvider) => {
 				$stateProvider
 				.state('home', {
 					url: '/home',
 					templateUrl: '/home.html'
 				})
-				$urlRouterProvider.when('/', '/home')
-				$urlRouterProvider.otherwise('/home')
+				$urlRouterProvider.when('/', '/home');
+				$urlRouterProvider.otherwise('/home');
+				//$locationProvider.html5Mode(true);
 			}])
-		.name
+		.name;
 })()
 
 

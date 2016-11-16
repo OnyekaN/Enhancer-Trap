@@ -5,7 +5,9 @@ var PROD = (process.env.NODE_ENV === 'production');
 
 module.exports = {
 	context: __dirname,
-	entry: './app/app.js',
+	entry: [
+		'./app/app.js',
+	],
 	output: {
 			path: path.join(__dirname, 'app/assets/js'),
 			filename: PROD ? 'main.min.js' : 'main.js'

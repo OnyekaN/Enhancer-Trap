@@ -65,13 +65,14 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(function () {
-		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider) {
 			$stateProvider.state('home', {
 				url: '/home',
 				templateUrl: '/home.html'
 			});
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
+			//$locationProvider.html5Mode(true);
 		}]).name;
 	})();
 
@@ -4855,7 +4856,6 @@
 			template: '<lines-viewer-component line-data="$resolve.line"></lines-viewer-component>',
 			resolve: {
 				line: ['$stateParams', 'LinesViewerService', function ($stateParams, LinesViewerService) {
-					console.log(LinesViewerService.getLine($stateParams.id));
 					return LinesViewerService.getLine($stateParams.id);
 				}]
 			}
@@ -5059,7 +5059,9 @@
 		function NavService() {
 			_classCallCheck(this, NavService);
 
-			this.pages = [{ name: 'Home', link: '/#/home' }, { name: 'Line Viewer', link: '/#/lines-viewer' }, { name: 'Engert Lab Website', link: '#' }, { name: 'Z-Brain', link: '#' }];
+			this.pages = [{ name: 'Home', link: '/#/home' },
+			/*{ name: 'Line Viewer', link: '/#/lines-viewer' },*/
+			{ name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
 		}
 
 		_createClass(NavService, [{
@@ -5266,12 +5268,13 @@
 					return _this.allLines = _this.displayLines = response;
 				});
 				this.$scope.$on('selectionChange', function (event, selections) {
-					if (selections == "" || selections === undefined) {
+					if (!String(selections)) {
+						/* e.g. selections == "" */
 						return _this.displayLines = _this.allLines;
 					} else {
 						return _this.displayLines = _this.allLines.filter(function (obj) {
 							for (var item in selections) {
-								if (obj.Annotations.indexOf(selections[item]) != -1 || obj['Line Number'] == selections[item]) {
+								if (obj['Line Number'] == selections[item] || obj['Annotations'].indexOf(selections[item]) != -1) {
 									return true;
 								}
 							}

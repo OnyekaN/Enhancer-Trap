@@ -1,8 +1,8 @@
 /* lines-viewer/index.js */
 'use strict'
-import uiRouter from 'angular-ui-router'
-import LinesViewerComponent from './lines-viewer.component'
-import LinesViewerService from './lines-viewer.service'
+import uiRouter from 'angular-ui-router';
+import LinesViewerComponent from './lines-viewer.component';
+import LinesViewerService from './lines-viewer.service';
 
 const LinesViewer = angular
 	.module('LinesViewer', [ 
@@ -23,7 +23,6 @@ const LinesViewer = angular
 							'$stateParams', 
 							'LinesViewerService', 
 							($stateParams, LinesViewerService) => {
-								console.log(LinesViewerService.getLine($stateParams.id))
 								return LinesViewerService.getLine($stateParams.id)
 							}
 						]
@@ -31,6 +30,6 @@ const LinesViewer = angular
         })
 			$urlRouterProvider.otherwise('/')
     }])	
-	.name
+	.name;
 
-export default LinesViewer
+export default LinesViewer;
