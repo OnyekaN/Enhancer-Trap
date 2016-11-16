@@ -1,10 +1,12 @@
 <!--thumbs.html-->
-<div class="thumbnails container-fluid">
+<div class="thumbnails container-fluid col-md-5 col-sm-7 col-xs-10">
+
 	<div class="thumb" ng-repeat="line in $ctrl.displayLines">
 		<h4 class="center">{{::line["Line Number"]}}</h4>
 		<a ng-href="/#/lines-viewer/{{::line['Line Number']}}">
 			<img ng-src="{{::line.JPEG}}" alt="Line JPEG image"></img>
 		</a>
 	</div>
+
 </div>
 

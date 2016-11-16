@@ -5,10 +5,16 @@ html {
 /*navbar*/
 
 .navbar {
-
+	background-color: #fff !important;
+	border: 1px solid transparent !important;
+	border-bottom: 1px solid #eee !important;
+	font-family: Helvetica;
+	margin-bottom: 10px !important;
 }
 .navbar-header h4 {
-	margin: 14px 20px 0 0px;
+	font-family: "helvetica neue";
+	font-size: 1em;
+	margin: 16px 20px 0 0px;
 }
 .navbar a {
 	color: /* #38c */ !important;
@@ -18,6 +24,8 @@ html {
 /*body*/
 
 body {
+
+
 	background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
 	position: relative;
 }
@@ -27,13 +35,20 @@ a {
 }
 
 #title-search {
+	color: #000;
+	font-family: "Helvetica", "Book Antiqua", Palatino, serif;
+	font-size: 2.5em;
+	font-weight: normal;
+	margin-bottom: 30px;
 	margin-left: 25px ;
-	padding-bottom: 30px;
+	white-space: nowrap;
 }
+
 /*main*/
 
+
 .main.container-fluid  {
-	min-height: calc(95vh - 90px);
+	min-height: calc(100vh - 50px);
 	padding: 10px 40px;
 }
 
@@ -43,47 +58,58 @@ a {
 }
 
 
-/*selects & thumbnail*/
+/*selects*/
 
 .select-image select {
 	border: 1px solid transparent;
-	height: 60%;
-	min-height: 200px;
-	padding-left: 30px;
+	border-radius: 0 !important;
+	height: 450px !important;
+	margin: 0px !important;
+	overflow: scroll;
 }
-.select-image span {
-	color: #000;
+.select-image p {
+	color: #bdd;
+	font-family: Helvetica;
+	ffont-family: "Helvetica Neue", sans-serif;
 	font-size: 1em;
+	font-style: normal;
 }
 .select-image option {
-	color: #555;
-	font-family: "Times New Roman", Times, Serif !important;
-	font-size: 1em;
-	padding-bottom: 0;
+	color: #333;
+	font-family: palatino !important;	
+	font-size: 0.9em;
 	webkit-font-smoothing: antialiased;
 }
 
 
-thumbs-component h4 {
-	color: #38c;
+
+/*thumbnails*/
+
+.thumb {
+	bbackground-color: #fff;
 }
+.thumb h4 {
+	color: #ccc;
+	font-family: helvetica;
+	font-size: 0.8em;
+	font-style: italic;
+	position:relative; 
+	left: 5px;
+	top: 32px;
+}
+
 .thumbnails {
-	background-color: transparent;
 	border: 1px solid transparent;
-	border-radius: 4px;
- 	height: 900px;
-	/*min-height: ~*/
-	left: 40px;
+	border-radius: 5px;
+ 	height: 600px;
+	margin: 0em 1em !important;
 	overflow: scroll;
-	padding: 20px;
-	margin-top: 28px;
-	margin-bottom:50px;
 }
 
 .thumbnails img {
-	border-radius: 0;
+	bborder: 1px solid #000;
+	border-radius: 3px;
 	height: 160px;
-	margin-bottom: 20px; 
 	width: 405px;
 }
 

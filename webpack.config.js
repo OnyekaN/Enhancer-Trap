@@ -7,7 +7,6 @@ module.exports = {
 	context: __dirname,
 	entry: [
 		'./app/app.js',
-		'webpack-dev-server/client?http://localhost:8080'
 	],
 	output: {
 			path: path.join(__dirname, 'app/assets/js'),
