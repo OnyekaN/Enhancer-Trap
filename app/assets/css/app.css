@@ -87,7 +87,7 @@ a {
 
 .thumb {
 	background-color: #fff;
-	box-shadow: 3px 4px 4px #aaa;
+	box-shadow: 3px 4px 0px #aaa;
 	margin: 1em 0.5em;
 	width: 430px;
 	padding: 1em 1em;
