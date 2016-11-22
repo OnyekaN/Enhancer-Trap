@@ -75,19 +75,25 @@ a {
 	font-style: normal;
 }
 .select-image option {
-	color: #555;
+	color: #246;
 	font-family: palatino !important;	
 	font-size: 0.9em;
-	webkit-font-smoothing: antialiased;
+	font-style: underline;
+	-webkit-font-smoothing: antialiased;
+}
+.select-image option:nth-child(even)  {
+	background-color: #f2f2f2;
 }
 
 
 
-/*thumbnails*/
+/*thumbs*/
 
 .thumb {
-	background-color: #fff;
-	box-shadow: 3px 4px 0px #aaa;
+
+	background-color: #000;
+	--border: 1px solid #ccc;
+	box-shadow: 2px 2px 0px #b3b3b3;
 	margin: 1em 0.5em;
 	width: 430px;
 	padding: 1em 1em;
@@ -103,17 +109,18 @@ a {
 }
 
 .thumbnails {
-	bbackground-color: white;
-	border: 1px solid #ddd;
+	--background-color: white;
+	border: 1px solid transparent;
 	border-radius: 5px;
  	height: 600px;
 	margin: 0em 1em !important;
 	overflow: scroll;
+
 }
 
 
 .thumbnails img {
-	bborder: 1px solid #000;
+	--border: 1px solid #000;
 	border-radius: 3px;
 	height: 160px;
 	width: 405px;
