@@ -90,14 +90,16 @@ a {
 /*thumbs*/
 
 .thumb {
-
-	background-color: #000;
-	--border: 1px solid #ccc;
-	box-shadow: 2px 2px 0px #b3b3b3;
+	background-color: #fff;
+	#border: 1px solid #ccc;
+	#box-shadow: 2px 2px 3px #c3c3c3;
 	margin: 1em 0.5em;
 	width: 430px;
 	padding: 1em 1em;
 	position: relative;
+}
+.thumb:hover {
+	box-shadow: 0px 0px 10px #b3b3b3;
 }
 .thumb h4 {
 	color: #ccc;
@@ -109,7 +111,7 @@ a {
 }
 
 .thumbnails {
-	--background-color: white;
+	#background-color: white;
 	border: 1px solid transparent;
 	border-radius: 5px;
  	height: 600px;
@@ -120,11 +122,15 @@ a {
 
 
 .thumbnails img {
-	--border: 1px solid #000;
+	#border: 1px solid #000;
 	border-radius: 3px;
 	height: 160px;
 	width: 405px;
 }
+.thumbnails img:hover {
+	opacity: 0.7;
+}
+
 
 /*footer*/
 
@@ -147,23 +153,38 @@ a {
 
 /* lines-viewer */
 
-.row.top {
-	height: 30px;
-}
+.lines-viewer.container-fluid {
+	background-color: ;
+	height:700px;
+	margin-top: 30px;
 
+}
 .lines-viewer {
-	margin-bottom: 40px;
+	margin-bottom: 70px;
+}
+.lines-viewer h2 {
+	color: #888;
+	font-family: "Helvetica Neue", sans-serif;
 }
 .lines-viewer img {
+	box-shadow: 0px 0px 10px #ccc;
 	height: 300px;
 	width: 950px:
 }
 
+.lines-info #annotations {
+	height: 200px;
+	padding: 15px;
+	width: 600px;
+}
+.lines-info #annotations-list {
+	font-style: italic;
+	padding-left: 50px;
+}
 .lines-info #annotations-title {
-	font-size: 1.4em;
+	font-size: 1.1em;
 }
 .lines-info #buttons {
-	margin-left: 110px;
 }
 .lines-info #buttons span {
 	font-family: sans-serif;
@@ -174,7 +195,7 @@ a {
 	font-family: serif;
 	font-size: 0.9em;
 	margin-left: -37px;
-	list-style-type: none;
+	#list-style-type: none;
 }
 .lines-info li {
 }

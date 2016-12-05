@@ -1,33 +1,32 @@
 <!--lines-viewer.html-->
-	<div class="row top">
-		</div>
 
-		<div class="row lines-viewer">
-			<div class="col-md-9 col-md-offset- col-sm-10 col-sm-offset-2">
+		<div class="lines-viewer container-fluid">
+		<a name="top"></a>	
+			<div class="lines-viewer row">
+				<div class="col-md-9 col-sm-offset-2 col-sm-10 col-xs-8">
+					<h2>Line Number: <b>{{$ctrl.line["Line Number"]}}</b></h2>
+					<br>
+					<img ng-src="{{$ctrl.line.JPEG}}"
+						alt="Line JPEG image">
+					</img><br>
 
-				<h2 style="font-family:sans-serif">
-					Line Number | <b>{{$ctrl.line["Line Number"]}}</b>
-				</h2><br>
-				<img ng-src="{{$ctrl.line.JPEG}}"
-					alt="Line JPEG image">
-				</img><br>
-
+				</div>
 			</div>
-		</div>
-		
-		<div class="row lines-info">
-			<div class="col-md-9 col-md-offset- col-sm-11 col-sm-offset-2">
-				
-				<div class="col-md-5 col-sm-7">
+			
+			<div class="row lines-info">	
+				<div id="annotations" class="col-md-6 col-sm-7 col-sm-offset-2
+				col-xs-3">
 					<span id="annotations-title">Annotations</span>	
-
-					<ul>
+					<ul id="annotations-list">
 						<br>
 						<li ng-repeat="ann in $ctrl.line.Annotations">{{ann}}</li>
 					</ul>	
 				</div>
+			</div>
 
-				<div class="col-md-4 col-sm-4">
+			<div class="row lines-info buttons">
+
+				<div class="col-md-8 col-sm-12 col-sm-offset-2 col-xs-10">
 					<span id="buttons">
 						<span><a class="btn btn-primary"
 							ng-href="mailto:florian@mcb.harvard.edu?subject=Placing 
@@ -35,14 +34,19 @@
 							I would like to place an order for Enhancer Trap line number 
 							{{$ctrl.line['Line Number']}}.%0D%0A%0D%0AThank you" 
 							role="button">
-							Place Order</a>
+							Request Line</a>
 						</span>
 						<span><a class="btn btn-primary"
 							ng-href="{{$ctrl.line.TIF}}" role="button" download>
-							Download TIF</a>
+							Download TIF Stack</a>
+						</span>
+						<span><a class="btn btn-default"
+							href="/#/home" role="button">
+							Home Page</a>
 						</span>
 					</span>
 				</div>
-
 			</div>
-		</div>
+
+		</div container-fluid>
+
