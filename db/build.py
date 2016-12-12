@@ -72,7 +72,7 @@ def add_to_db(collection, dictionary):
           insertions.append(collection.insert_one(dictionary[key]))
      return insertions
 
-#add_to_db(coll, lines_dict)
+add_to_db(coll, lines_dict)
 
 def update_db(collection, dictionary):
      updates = []

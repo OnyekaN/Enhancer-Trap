@@ -8,10 +8,11 @@ var app = express();
 /* GET home page. */
 router.get('/', (req, res, next) => {
 	if (app.get('env') === 'development') {	
-		res.render('index', { title: 'ETrap' });
+		res.render('index', { title: 'ETrap', main: 'js/main.js' });
 	}
 	if (app.get('env') === 'production') {
-		res.render('indexProd', { title: 'Enhancer Trap Website' });
+		res.render('index', { title: 'Enhancer Trap Database',
+															main: 'js/main.min.js' });
 	}
 })
 
