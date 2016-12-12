@@ -54,7 +54,7 @@ def to_dict_add_image_paths(dictionary):
 
 
 #### import dictionary
-lines_dict = pickle.load(open("linesDict.p", "rb"))
+lines_dict = pickle.load(open("./linesDict.p", "rb"))
 
 #### mongoDB operations
 
@@ -84,5 +84,5 @@ def update_db(collection, dictionary):
                upsert='false'))
     # print [update for update in updates]
 
-# update_db(coll, lines_dict)
+#update_db(coll, lines_dict)
 print [x for x in coll.find()]
