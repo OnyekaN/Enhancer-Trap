@@ -2,3 +2,6 @@
 *.tif
 .DS_Store
 *.swp
+db/diagnostic.data/
+
+
