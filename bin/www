@@ -5,7 +5,7 @@
  */
 
 var app = require('../server');
-var debug = require('debug')('Z-Trap:server');
+var debug = require('debug')('E-Trap:server');
 var http = require('http');
 
 /**
