@@ -1,6 +1,7 @@
 import csv
 import glob
 import ntpath
+import operator
 import pickle
 from pymongo import MongoClient
 
@@ -27,7 +28,7 @@ def build_dict():
      print 'Initialized Dict from CSV'
      return linesDict
 
-#lines_dict = build_dict()
+lines_dict = build_dict()
 
 def to_dict_add_image_paths(dictionary):
      for key in dictionary:
@@ -43,26 +44,27 @@ def to_dict_add_image_paths(dictionary):
                return
 
      print 'Added Image Srcs to Dict'
-
-#to_dict_add_image_paths(lines_dict)
-
+to_dict_add_image_paths(lines_dict)
 
 #### export dictionary
-#print 'Printing Dict\n', lines_dict
-#pickle.dump(lines_dict, open("linesDict.p", "wb"))
-
-
+print 'Printing Dict\n', lines_dict 
+pickle.dump(lines_dict, open("linesDict.p", "wb"))
 
 #### import dictionary
+<<<<<<< HEAD
 lines_dict = pickle.load(open("./linesDict.p", "rb"))
+=======
+#lines_dict = pickle.load(open("linesDict.p", "rb"))
+>>>>>>> 5df6ff57c5eb33582b1cf4f740df4fdfe51228cf
 
 #### mongoDB operations
-
 def connect_to_db(database, collection):
 
      client = MongoClient()
-     db = client[database]
+     db = client[database] 
+     db.drop_collection(collection)
      return db[collection]
+
 
 coll = connect_to_db('enhancertrap', 'dataset')
 
@@ -85,4 +87,9 @@ def update_db(collection, dictionary):
     # print [update for update in updates]
 
 #update_db(coll, lines_dict)
+<<<<<<< HEAD
 print [x for x in coll.find()]
+=======
+
+found = [x for x in coll.find()]
+>>>>>>> 5df6ff57c5eb33582b1cf4f740df4fdfe51228cf
