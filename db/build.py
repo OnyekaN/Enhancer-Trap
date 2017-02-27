@@ -47,15 +47,11 @@ def to_dict_add_image_paths(dictionary):
 to_dict_add_image_paths(lines_dict)
 
 #### export dictionary
-print 'Printing Dict\n', lines_dict 
+#print 'Printing Dict\n', lines_dict 
 pickle.dump(lines_dict, open("linesDict.p", "wb"))
 
 #### import dictionary
-<<<<<<< HEAD
-lines_dict = pickle.load(open("./linesDict.p", "rb"))
-=======
-#lines_dict = pickle.load(open("linesDict.p", "rb"))
->>>>>>> 5df6ff57c5eb33582b1cf4f740df4fdfe51228cf
+#lines_dict = pickle.load(open("./linesDict.p", "rb"))
 
 #### mongoDB operations
 def connect_to_db(database, collection):
@@ -87,9 +83,6 @@ def update_db(collection, dictionary):
     # print [update for update in updates]
 
 #update_db(coll, lines_dict)
-<<<<<<< HEAD
-print [x for x in coll.find()]
-=======
 
-found = [x for x in coll.find()]
->>>>>>> 5df6ff57c5eb33582b1cf4f740df4fdfe51228cf
+print [x for x in coll.find()]
+

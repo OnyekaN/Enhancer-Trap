@@ -5156,7 +5156,7 @@
 				this.LinesService.getLines().then(function (response) {
 					_this.lineNumbers = response.map(function (obj) {
 						return obj["Line Number"];
-					});
+					}).sort();
 					response.map(function (obj) {
 						return obj.Annotations.map(function (ann) {
 							if (!~_this.lineAnnotations.indexOf(ann)) {

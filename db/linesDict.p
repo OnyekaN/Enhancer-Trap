@@ -94,9 +94,9 @@ aS'Rhombencephalon-X Vagus motorneuron cluster'
 p43
 aS'Diencephalon'
 p44
-aS'Mecencephalon'
+aS'Mesencephalon'
 p45
-aS'Ganglia- Lateral Line Neuromast 01'
+aS'Ganglia-Lateral Line Neuromast 01'
 p46
 asg13
 S'images/MAX_15577_6dpf_MeanImageOf11Fish.jpg'
@@ -119,7 +119,7 @@ aS'Mesencephalon-Vglut2 Cluster 1'
 p54
 aS'Telencephalon'
 p55
-aS'Rhombencephalon-'
+aS'Rhombencephalon'
 p56
 aS'Neuropil Region 5'
 p57
@@ -245,7 +245,7 @@ aS'Telencephalon-Subpallial dopaminergic cluster'
 p108
 aS'Diencephalon-Dorsal Thalamus'
 p109
-aS'Mesencephalon--Tectal Neuropil'
+aS'Mesencephalon-Tectal Neuropil'
 p110
 aS'Ganglia-Eyes'
 p111
@@ -324,7 +324,7 @@ aS'Anterior Lateral Line Ganglion'
 p143
 aS'Vagal Ganglia'
 p144
-aS'Rhombencephalon- Neuropil Region 4'
+aS'Rhombencephalon-Neuropil Region 4'
 p145
 aS'Rhombencephalon-Interpeduncular Nucleus'
 p146
@@ -378,7 +378,7 @@ aS'Ganglia-Statoacoustic Ganglia'
 p167
 aS'Diencephalon-Habenula'
 p168
-aS'Rhombencephalon-'
+aS'Rhombencephalon'
 p169
 aS'Neuropil Region 4'
 p170
@@ -397,7 +397,7 @@ sg6
 (lp175
 S'Diencephalon-Habenula'
 p176
-aS'Rhombencephalon-'
+aS'Rhombencephalon'
 p177
 aS'Neuropil Region 4'
 p178
@@ -582,7 +582,7 @@ aS'Telencephalon'
 p257
 aS'Telencephalon-Subpallial Otpb Cluster 2'
 p258
-aS'Telencephalon-Olfactory bulb'
+aS'Telencephalon-Olfactory Bulb'
 p259
 asg13
 S'images/MAX_16914_6dpf_MeanImageOf7Fish.jpg'
@@ -620,11 +620,11 @@ S'images/14543_6dpf_MeanImageOf10Fish.tif'
 p273
 sg6
 (lp274
-S'Mesecephalon-Tegmentum'
+S'Mesencephalon-Tegmentum'
 p275
-aS'Diancephelon-Habenula'
+aS'Diencephalon-Habenula'
 p276
-aS'Rhombencephalon-Rhombhomere 7'
+aS'Rhombencephalon-Rhombomere 7'
 p277
 asg13
 S'images/MAX_14543_6dpf_MeanImageOf10Fish.jpg'

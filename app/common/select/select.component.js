@@ -1,6 +1,6 @@
 /* select/select.component.js */
 'use strict'
-import SelectController from './select.controller'
+import SelectController from './select.controller';
 
 const selectComponent = {
 	bindings: {
@@ -9,4 +9,4 @@ const selectComponent = {
 	templateUrl: 'views/select/select.html'
 }
 
-export default selectComponent
+export default selectComponent;
