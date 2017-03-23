@@ -8,7 +8,11 @@
 					<br>
 					<img ng-src="{{$ctrl.line.JPEG}}"
 						alt="Line JPEG image">
-					</img><br>
+					</img>
+					<p>
+					Use the buttons below to order this line or to download the TIF
+					Stack
+					</p>
 
 				</div>
 			</div>
@@ -28,6 +32,10 @@
 
 				<div class="col-md-8 col-sm-12 col-sm-offset-2 col-xs-10">
 					<span id="buttons">
+						<span><a class="btn btn-default"
+							href="/#/home" role="button">
+							Home Page</a>
+						</span>
 						<span><a class="btn btn-primary"
 							ng-href="mailto:florian@mcb.harvard.edu?subject=Placing 
 							Order for Enhancer Trap line&body=Hi,%0D%0A%0D%0A
@@ -39,10 +47,6 @@
 						<span><a class="btn btn-primary"
 							ng-href="{{$ctrl.line.TIF}}" role="button" download>
 							Download TIF Stack</a>
-						</span>
-						<span><a class="btn btn-default"
-							href="/#/home" role="button">
-							Home Page</a>
 						</span>
 					</span>
 				</div>

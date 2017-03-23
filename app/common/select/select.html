@@ -1,5 +1,6 @@
-<div class="select-image col-md-4 col-md-offset- col-sm-3 col-xs-7">
-	<p class="text-center">By Annotation</p>
+<div class="select-image col-md-4 col-md-offset- col-sm-3
+col-xs-7">
+	<p class="text-center">Filter by Annotation</p>
   <select multiple class="form-control" 
 		ng-model="selectedAnnotations" 
 		ng-options="ann for ann in $ctrl.lineAnnotations">
@@ -7,7 +8,7 @@
 	</select>
 </div>
 <div class="select-image col-md-2 col-sm-2 col-xs-5">
-	<p class="text-center">By Line Number</p>
+	<p class="text-center">Filter by Line Number</p>
   <select multiple class="form-control" 
 		ng-model="selectedLineNumbers"
 		ng-options="num for num in $ctrl.lineNumbers">	
