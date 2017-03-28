@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./app/models/lines');
 
-var connection = mongoose.connect(process.env.MONGOLAB_URI);
+var connection = mongoose.connect('mongodb://localhost/enhancertrap');
 //console.log(process.env.MONGOLAB_URI)
 
 var routes = require('./routes/index');

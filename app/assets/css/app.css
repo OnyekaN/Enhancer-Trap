@@ -1,5 +1,6 @@
 html {
-	background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+
 }
 
 /*navbar*/
@@ -36,7 +37,7 @@ a {
 
 #title-search {
 	color: #000;
-	font-family: "Helvetica", "Book Antiqua", Palatino, serif;
+	font-family: "Palatino", Palatino, serif;
 	font-size: 2.5em;
 	font-weight: normal;
 	margin-bottom: 30px;
@@ -69,6 +70,7 @@ a {
 }
 .select-image p {
 	color: #ccc;
+	display: inline;
 	font-family: Helvetica;
 	font-size: 1em;
 	font-style: normal;
@@ -168,11 +170,11 @@ a {
 
 }
 .lines-viewer {
-	margin-bottom: 70px;
+	margin-bottom: 40px;
 }
 .lines-viewer h2 {
 	color: #888;
-	font-family: "Helvetica Neue", sans-serif;
+	font-family: "Palatino", palatino, serif;
 }
 .lines-viewer img {
 	box-shadow: 0px 0px 10px #ccc;
@@ -181,29 +183,33 @@ a {
 }
 
 .lines-info #annotations {
-	height: 200px;
+	height: 250px;
+	overflow: scroll;
 	padding: 15px;
 	width: 600px;
 }
 .lines-info #annotations-list {
+	font-size: 1.4em;
 	font-style: italic;
 	padding-left: 50px;
 }
 .lines-info #annotations-title {
 	font-size: 1.1em;
+	font-weight: bold;
 }
 .lines-info #buttons {
 }
 .lines-info #buttons span {
 	font-family: sans-serif;
 	margin-right: 10px;
+	margin-top: 60px;
 }
 .lines-info ul {
 	color: #000;
 	font-family: serif;
 	font-size: 0.9em;
 	margin-left: -37px;
-	#list-style-type: none;
+	list-style-type: none;
 }
 .lines-info li {
 }
