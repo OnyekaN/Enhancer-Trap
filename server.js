@@ -33,11 +33,11 @@ app.use(express.static(path.join(__dirname, 'app/assets')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/Enhancer-Trap', function(req, res, next) {
+/*app.use('/Enhancer-Trap', function(req, res, next) {
   res.writeHead(301, {Location: 'http://engertlab.fas.harvard.edu:3000/'});
   res.end();
 });
-
+*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
