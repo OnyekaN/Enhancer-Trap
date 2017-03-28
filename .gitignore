@@ -3,4 +3,5 @@
 .DS_Store
 *.swp
 db/diagnostic.data/
+npm-debug.log
 
