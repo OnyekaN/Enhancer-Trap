@@ -70,6 +70,7 @@ a {
 }
 .select-image p {
 	color: #ccc;
+	display: inline;
 	font-family: Helvetica;
 	font-size: 1em;
 	font-style: normal;
