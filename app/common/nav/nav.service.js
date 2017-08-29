@@ -5,13 +5,13 @@ class NavService {
 	constructor() {
 		this.pages = [
 			{ name: 'Home', link: '/#/home' },
-			/*{ name: 'Line Viewer', link: '/#/lines-viewer' },*/
+			{ name: 'About', link: '/#/about' },
 			{ name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' },
 			{ name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }
 		]
 	}
 	getActive() {
-	/* Return name of current active page based on current route */
+	/* Return name of current active page */
 	}
 }
 //NavService.$inject = ['$http', '$location']

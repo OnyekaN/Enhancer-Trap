@@ -1,0 +1,30 @@
+img {
+	width: 525px;
+	height: 288px;
+	display: inline;
+	position: relative;
+	clear: both;
+	float: left;
+	margin: 10px 10px 10px 0;
+	border: 1px solid black;
+}
+
+.right {
+	position: relative;
+	overflow: auto;
+	display: block;	
+	margin-left: 0;
+}
+
+.ref {
+	font-size: .8em;
+}
+
+h1 {
+
+	font-family: "Palatino", Palatino, serif;
+}
+
+h3 {
+	color: #78c;
+}
