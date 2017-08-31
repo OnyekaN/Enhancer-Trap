@@ -1,7 +1,7 @@
 /* lines/lines.component.js */
 'use strict'
 
-import LinesController from './lines.controller'
+import LinesController from './lines.controller';
 
 const LinesComponent = {
 	bindings: {
@@ -10,4 +10,4 @@ const LinesComponent = {
 	templateUrl: 'views/lines/lines.html'
 }
 
-export default LinesComponent
+export default LinesComponent;

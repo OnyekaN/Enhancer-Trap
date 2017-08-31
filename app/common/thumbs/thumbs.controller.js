@@ -11,8 +11,8 @@ class ThumbsController {
 		this.displayLines = {};
 		this.LinesService.getLines().then(response => this.allLines = this.displayLines = response);
 		this.$scope.$on('selectionChange', (event, selections) => {
-			if ( !String(selections) ) { /* e.g. selections == "" */
-				return this.displayLines = this.allLines;	
+			if ( !selections || !String(selections) ) { /* e.g. selections == "" */
+				return this.displayLines = this.allLines;		
 			}	
 			else {
 				return this.displayLines = this.allLines.filter(obj => {

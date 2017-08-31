@@ -19,6 +19,10 @@ import Common from './common/index';
 					url: '/home',
 					templateUrl: '/home.html'
 				})
+				.state('about', {
+					url: '/about',
+					templateUrl: '/views/about.html'
+				})
 				$urlRouterProvider.when('/', '/home');
 				$urlRouterProvider.otherwise('/home');
 				//$locationProvider.html5Mode(true);

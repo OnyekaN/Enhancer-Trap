@@ -9,7 +9,7 @@ background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE
 	background-color: #eee !important;
 	border: 1px solid transparent !important;
 	border-bottom: 1px solid #eee !important;
-	font-family:  "Helvetica Neue", helvetica, sans-serif;
+	font-family:  "Raleway", helvetica, sans-serif;
 	margin-bottom: 10px !important;
 }
 .navbar-header h4 {
@@ -25,8 +25,6 @@ background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE
 /*body*/
 
 body {
-
-
 	background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
 	position: relative;
 }
@@ -87,7 +85,7 @@ a {
 .select-image option:hover {
 	background-color: #c4c4c4;
 	color: #479;
-	font-size: 1.em;
+	-font-size: 1em;
 	font-weight: bold;
 }
 

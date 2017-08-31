@@ -69,6 +69,9 @@
 			$stateProvider.state('home', {
 				url: '/home',
 				templateUrl: '/home.html'
+			}).state('about', {
+				url: '/about',
+				templateUrl: '/views/about.html'
 			});
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
@@ -5059,15 +5062,13 @@
 		function NavService() {
 			_classCallCheck(this, NavService);
 
-			this.pages = [{ name: 'Home', link: '/#/home' },
-			/*{ name: 'Line Viewer', link: '/#/lines-viewer' },*/
-			{ name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
+			this.pages = [{ name: 'Home', link: '/#/home' }, { name: 'About', link: '/#/about' }, { name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
 		}
 
 		_createClass(NavService, [{
 			key: 'getActive',
 			value: function getActive() {
-				/* Return name of current active page based on current route */
+				/* Return name of current active page */
 			}
 		}]);
 
@@ -5268,7 +5269,7 @@
 					return _this.allLines = _this.displayLines = response;
 				});
 				this.$scope.$on('selectionChange', function (event, selections) {
-					if (!String(selections)) {
+					if (!selections || !String(selections)) {
 						/* e.g. selections == "" */
 						return _this.displayLines = _this.allLines;
 					} else {

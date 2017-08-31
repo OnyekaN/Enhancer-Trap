@@ -8,10 +8,10 @@ class LinesService {
 	getLines() {
 		return this.$http.get('/api/lines')
 						.then(response => response.data) 
-						.catch(e => console.log(e))
+						.catch(e => console.log(e));
 	}
 }
 
-LinesService.$inject = ['$http']
+LinesService.$inject = ['$http'];
 
-export default LinesService
+export default LinesService;
