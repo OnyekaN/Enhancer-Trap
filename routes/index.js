@@ -9,7 +9,7 @@ var app = express();
 /* GET home page. */
 router.get('/', (req, res, next) => {
 	if (app.get('env') === 'development') {	
-		res.render('index', { title: 'ETrap', main: 'js/main.js' });
+		res.render('index', { title: 'Engert Lab Lines Resource', main: 'js/main.js' });
 	}
 	if (app.get('env') === 'production') {
 		res.render('index', { title: 'Enhancer Trap Database',
