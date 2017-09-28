@@ -9,7 +9,9 @@ class ThumbsController {
 	$onInit() {
 		this.allLines = {};
 		this.displayLines = {};
-		this.LinesService.getLines().then(response => this.allLines = this.displayLines = response);
+		this.LinesService.getLines().then(response => { response.sort((a,b) => {
+			return parseFloat(a["Line Number"]) - parseFloat(b["Line Number"]) 
+		}); this.allLines = this.displayLines = response});
 		this.$scope.$on('selectionChange', (event, selections) => {
 			if ( !selections || !String(selections) ) { /* e.g. selections == "" */
 				return this.displayLines = this.allLines;		
