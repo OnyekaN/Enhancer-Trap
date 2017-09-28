@@ -28,7 +28,7 @@ def build_dict():
      print 'Initialized Dict from CSV'
      return linesDict
 
-lines_dict = build_dict()
+#lines_dict = build_dict()
 
 def to_dict_add_image_paths(dictionary):
      for key in dictionary:
@@ -44,14 +44,14 @@ def to_dict_add_image_paths(dictionary):
                return
 
      print 'Added Image Srcs to Dict'
-to_dict_add_image_paths(lines_dict)
+#to_dict_add_image_paths(lines_dict)
 
 #### export dictionary
 #print 'Printing Dict\n', lines_dict 
-pickle.dump(lines_dict, open("linesDict.p", "wb"))
+#pickle.dump(lines_dict, open("linesDict.p", "wb"))
 
 #### import dictionary
-#lines_dict = pickle.load(open("./linesDict.p", "rb"))
+lines_dict = pickle.load(open("./linesDict.p", "rb"))
 
 #### mongoDB operations
 def connect_to_db(database, collection):
