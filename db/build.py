@@ -28,8 +28,6 @@ def build_dict():
      print 'Initialized Dict from CSV'
      return linesDict
 
-#lines_dict = build_dict()
-
 def to_dict_add_image_paths(dictionary):
      for key in dictionary:
           old_tif_path = glob.glob('../app/assets/images/*%s*.tif' % key)
@@ -44,6 +42,9 @@ def to_dict_add_image_paths(dictionary):
                return
 
      print 'Added Image Srcs to Dict'
+
+#### build dictionariy
+#lines_dict = build_dict()
 #to_dict_add_image_paths(lines_dict)
 
 #### export dictionary
@@ -61,16 +62,11 @@ def connect_to_db(database, collection):
      db.drop_collection(collection)
      return db[collection]
 
-
-coll = connect_to_db('enhancertrap', 'dataset')
-
 def add_to_db(collection, dictionary):
      insertions = []
      for key in dictionary:
           insertions.append(collection.insert_one(dictionary[key]))
      return insertions
-
-add_to_db(coll, lines_dict)
 
 def update_db(collection, dictionary):
      updates = []
@@ -82,6 +78,9 @@ def update_db(collection, dictionary):
                upsert='false'))
     # print [update for update in updates]
 
+#### connect and add to/update db
+coll = connect_to_db('enhancertrap', 'dataset')
+add_to_db(coll, lines_dict)
 #update_db(coll, lines_dict)
 
 print [x for x in coll.find()]

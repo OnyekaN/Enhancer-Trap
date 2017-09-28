@@ -5259,14 +5259,16 @@
 		}
 
 		_createClass(ThumbsController, [{
-			key: '$onInit',
+			key: "$onInit",
 			value: function $onInit() {
 				var _this = this;
 
 				this.allLines = {};
 				this.displayLines = {};
 				this.LinesService.getLines().then(function (response) {
-					return _this.allLines = _this.displayLines = response;
+					response.sort(function (a, b) {
+						return parseFloat(a["Line Number"]) - parseFloat(b["Line Number"]);
+					});_this.allLines = _this.displayLines = response;
 				});
 				this.$scope.$on('selectionChange', function (event, selections) {
 					if (!selections || !String(selections)) {
