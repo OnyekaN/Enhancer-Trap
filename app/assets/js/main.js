@@ -4914,8 +4914,11 @@
 		function LinesViewerController(LinesViewerService) {
 			_classCallCheck(this, LinesViewerController);
 
-			this.line = this.lineData[0];
 			this.LinesViewerService = LinesViewerService;
+			this.line = this.lineData[0];
+			if (!this.line.Annotations.length) {
+				this.line.Annotations = ["In Progress"];
+			}
 		}
 
 		_createClass(LinesViewerController, [{
