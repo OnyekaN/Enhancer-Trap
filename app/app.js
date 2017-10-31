@@ -21,7 +21,7 @@ import Common from './common/index';
 				})
 				.state('about', {
 					url: '/about',
-					templateUrl: '/views/about.html'
+					templateUrl: 'views/about.html'
 				})
 				$urlRouterProvider.when('/', '/home');
 				$urlRouterProvider.otherwise('/home');

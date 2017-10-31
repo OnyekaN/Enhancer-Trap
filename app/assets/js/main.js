@@ -71,7 +71,7 @@
 				templateUrl: '/home.html'
 			}).state('about', {
 				url: '/about',
-				templateUrl: '/views/about.html'
+				templateUrl: 'views/about.html'
 			});
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
@@ -4813,7 +4813,7 @@
 		_createClass(LinesService, [{
 			key: 'getLines',
 			value: function getLines() {
-				return this.$http.get('/api/lines').then(function (response) {
+				return this.$http.get('api/lines').then(function (response) {
 					return response.data;
 				}).catch(function (e) {
 					return console.log(e);
@@ -5065,7 +5065,7 @@
 		function NavService() {
 			_classCallCheck(this, NavService);
 
-			this.pages = [{ name: 'Home', link: '/#/home' }, { name: 'About', link: '/#/about' }, { name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
+			this.pages = [{ name: 'Home', link: '#/home' }, { name: 'About', link: '#/about' }, { name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
 		}
 
 		_createClass(NavService, [{

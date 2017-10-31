@@ -6,7 +6,7 @@ class LinesService {
 		this.$http = $http;
 	}
 	getLines() {
-		return this.$http.get('/api/lines')
+		return this.$http.get('api/lines')
 						.then(response => response.data) 
 						.catch(e => console.log(e));
 	}
