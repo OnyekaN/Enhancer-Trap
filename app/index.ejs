@@ -11,6 +11,18 @@
 <script src="lib/angular.min.js"></script>
 <script src="lib/angular-ui-router.min.js"></script>
 <script src=<%= main %>></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108664780-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108664780-2');
+</script>
+
+
 <body ng-app="eTRapp">
 
 	<nav-component></nav-component>
