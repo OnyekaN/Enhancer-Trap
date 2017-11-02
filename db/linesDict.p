@@ -146,9 +146,9 @@ aS'Rhombencephalon-X Vagus motorneuron cluster'
 p63
 aS'Diencephalon'
 p64
-aS'Mecencephalon'
+aS'Mesencephalon'
 p65
-aS'Ganglia- Lateral Line Neuromast 01'
+aS'Ganglia-Lateral Line Neuromast 01'
 p66
 asg8
 S'images/MAX_15577_6dpf_MeanImageOf11Fish.jpg'
@@ -167,7 +167,7 @@ S'Diencephalon'
 p72
 aS'Diencephalon-Habenula'
 p73
-aS'Mesencephalon-Vglut2 Cluster 1'
+aS'Mesencephalon-Vglut2 cluster 1'
 p74
 aS'Telencephalon'
 p75
@@ -397,11 +397,11 @@ sg6
 (lp166
 S'Telencephalon-Subpallium'
 p167
-aS'Telencephalon-Subpallial dopaminergic cluster'
+aS'Telencephalon-Subpallial Dopaminergic Cluster'
 p168
 aS'Diencephalon-Dorsal Thalamus'
 p169
-aS'Mesencephalon--Tectal Neuropil'
+aS'Mesencephalon-Tectal Neuropil'
 p170
 aS'Ganglia-Eyes'
 p171
@@ -480,7 +480,7 @@ aS'Anterior Lateral Line Ganglion'
 p203
 aS'Vagal Ganglia'
 p204
-aS'Rhombencephalon- Neuropil Region 4'
+aS'Rhombencephalon-Neuropil Region 4'
 p205
 aS'Rhombencephalon-Interpeduncular Nucleus'
 p206
@@ -507,7 +507,7 @@ aS'Telencephalon-Olfactory Bulb'
 p215
 aS'Mesencephalon-Tectum Stratum Periventriculare'
 p216
-aS'Mesencephalon-Vglut 2 cluster 1'
+aS'Mesencephalon-Vglut2 cluster 1'
 p217
 aS'Mesencephalon-Tegmentum'
 p218
@@ -709,7 +709,7 @@ aS'Rhombencephalon-Neuropil Region 4'
 p301
 aS'Diencephalon-Habenula'
 p302
-aS'Diencephalon-Left Habenula Vglut2 Cluster'
+aS'Diencephalon-Left Habenula Vglut2 cluster'
 p303
 aS'Mesencephalon'
 p304
@@ -736,7 +736,7 @@ aS'Diencephalon-Habenula'
 p313
 aS'Rhombencephalon'
 p314
-aS'Rhombencephalon Neuropil Region 2'
+aS'Rhombencephalon-Neuropil Region 2'
 p315
 asg8
 S'images/MAX_18329_6dpf_MeanImageOf9Fish.jpg'
@@ -790,7 +790,7 @@ aS'Telencephalon'
 p337
 aS'Telencephalon-Subpallial Otpb Cluster 2'
 p338
-aS'Telencephalon-Olfactory bulb'
+aS'Telencephalon-Olfactory Bulb'
 p339
 asg8
 S'images/MAX_16914_6dpf_MeanImageOf7Fish.jpg'
@@ -828,9 +828,9 @@ S'images/14543_6dpf_MeanImageOf10Fish.tif'
 p353
 sg6
 (lp354
-S'Mesecephalon-Tegmentum'
+S'Mesencephalon-Tegmentum'
 p355
-aS'Diancephelon-Habenula'
+aS'Diancephalon-Habenula'
 p356
 aS'Rhombencephalon-Rhombhomere 7'
 p357

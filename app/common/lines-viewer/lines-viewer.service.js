@@ -7,7 +7,7 @@ class LinesViewerService {
 		this.line = undefined
 	}
 	getLine(id) {
-		return this.$http.get('/api/' + id)
+		return this.$http.get('api/' + id)
 						.then(response => response.data)
 						.catch(e => console.log(e))	
 	}

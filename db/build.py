@@ -43,17 +43,6 @@ def to_dict_add_image_paths(dictionary):
 
      print 'Added Image Srcs to Dict'
 
-#### build dictionariy
-#lines_dict = build_dict()
-#to_dict_add_image_paths(lines_dict)
-
-#### export dictionary
-#print 'Printing Dict\n', lines_dict 
-#pickle.dump(lines_dict, open("linesDict.p", "wb"))
-
-#### import dictionary
-lines_dict = pickle.load(open("./linesDict.p", "rb"))
-
 #### mongoDB operations
 def connect_to_db(database, collection):
 
@@ -78,7 +67,23 @@ def update_db(collection, dictionary):
                upsert='false'))
     # print [update for update in updates]
 
+
+
+
+#### build dictionary
+#lines_dict = build_dict()
+#to_dict_add_image_paths(lines_dict)
+
+#### export dictionary
+#print 'Printing Dict\n', lines_dict 
+#pickle.dump(lines_dict, open("linesDict.p", "wb"))
+
+#### import dictionary
+lines_dict = pickle.load(open("./linesDict.p", "rb"))
+
+
 #### connect and add to/update db
+
 coll = connect_to_db('enhancertrap', 'dataset')
 add_to_db(coll, lines_dict)
 #update_db(coll, lines_dict)

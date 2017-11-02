@@ -4959,7 +4959,7 @@
 		_createClass(LinesViewerService, [{
 			key: 'getLine',
 			value: function getLine(id) {
-				return this.$http.get('/api/' + id).then(function (response) {
+				return this.$http.get('api/' + id).then(function (response) {
 					return response.data;
 				}).catch(function (e) {
 					return console.log(e);
