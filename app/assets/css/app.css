@@ -78,6 +78,7 @@ a {
 	font-family: palatino !important;	  
 	font-size: 0.9em;
 	-webkit-font-smoothing: antialiased;
+	transition: background-color 0.2s ease;
 }
 .select-image option:nth-child(even)  {
 	background-color: #f6f6f6;
