@@ -74,6 +74,7 @@ a {
 	font-style: normal;
 }
 .select-image option {
+	width: 100%;
 	color: #246;
 	font-family: palatino !important;	  
 	font-size: 0.9em;
@@ -103,9 +104,11 @@ a {
 	width: 430px;
 	padding: 1em 1em;
 	position: relative;
+	transition: all 0.2s ease;
 }
 .thumb:hover {
 	box-shadow: 0px 0px 10px #b3b3b3;
+	transform: scale(1.01);
 }
 .thumb h4 {
 	color: #ccc !important;

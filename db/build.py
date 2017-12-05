@@ -1,3 +1,5 @@
+import os
+import sys
 import csv
 import glob
 import ntpath
@@ -5,10 +7,13 @@ import operator
 import pickle
 from pymongo import MongoClient
 
-#### from csv build dictionary that is the basis of database
-def build_dict():
+flag = sys.argv[1]
+file_path = os.path.dirname(os.path.realpath(__file__))
 
-     with open('Website Formation.csv', 'rb') as csvfile:
+#### from csv build dictionary that is the basis of database
+def build_dict(file_path):
+
+     with open('%s/Website Formation.csv' % file_path, 'rb') as csvfile:
           csvreader = csv.reader(csvfile, dialect=csv.excel_tab,
                     delimiter=',', quotechar='"')
 
@@ -23,22 +28,24 @@ def build_dict():
                          linesDict[line[j]]['Line Number'] = col
                          linesDict[line[j]]['Annotations'] = []
                     else:
-                         if col != '':
+                         if col != '' and col not in linesDict[line[j]]['Annotations']:
                               linesDict[line[j]]['Annotations'].append(col)
      print 'Initialized Dict from CSV'
      return linesDict
 
-def to_dict_add_image_paths(dictionary):
+def to_dict_add_image_paths(file_path, dictionary):
      for key in dictionary:
-          old_tif_path = glob.glob('../app/assets/images/*%s*.tif' % key)
-          old_jpg_path = glob.glob('../app/assets/images/*%s*.jpg' % key) 
-          if old_tif_path and old_jpg_path:
+          old_tif_path = glob.glob('%s/../app/assets/images/*%s*.tif'
+                    % (file_path, key))
+          old_jpeg_path = glob.glob('%s/../app/assets/images/*%s*.jpeg'
+                    % (file_path, key))
+          if old_tif_path and old_jpeg_path:
                new_tif_path = 'images/%s' % ntpath.basename(old_tif_path[0])
-               new_jpg_path = 'images/%s' % ntpath.basename(old_jpg_path[0])
+               new_jpeg_path = 'images/%s' % ntpath.basename(old_jpeg_path[0])
                dictionary[key]['TIF'] = new_tif_path 
-               dictionary[key]['JPEG'] = new_jpg_path 
+               dictionary[key]['JPEG'] = new_jpeg_path 
           else:
-               print 'Add Image Path Error'
+               print 'Add Image Path Error, %s, tif:%s, jpg:%s' % (key, old_tif_path, old_jpeg_path)
                return
 
      print 'Added Image Srcs to Dict'
@@ -68,25 +75,37 @@ def update_db(collection, dictionary):
     # print [update for update in updates]
 
 
+def main(file_path, flag):
+     # If dry run, output results of attempts to build dict and add image paths
+     if flag == 'dry':
+          lines_dict = build_dict(file_path)
+          to_dict_add_image_paths(file_path, lines_dict)
+     # Output built dict
+     elif flag == 'print':
+          lines_dict = build_dict(file_path)
+          to_dict_add_image_paths(file_path, lines_dict)
+          print 'Printing Dict\n', lines_dict
+
+     # If all clear, export dictionary with pickle
+     elif flag == 'pickle':
+          lines_dict = build_dict(file_path)
+          to_dict_add_image_paths(file_path, lines_dict)
+          pickle.dump(lines_dict, open("%s/linesDict.p" % file_path, "wb"))
+
+     # Import pickled dictionary and add values to the db 
+     elif flag == 'update':
+          lines_dict = pickle.load(open("%s/linesDict.p" % file_path, "rb"))
+          coll = connect_to_db('enhancertrap', 'dataset')
+          add_to_db(coll, lines_dict)
+          #update_db(coll, lines_dict)
+          print [x for x in coll.find()]
+
+     else:
+          print '"%s" not a valid flag (dry, print, pickle, update)' % flag
+
+     return
 
 
-#### build dictionary
-#lines_dict = build_dict()
-#to_dict_add_image_paths(lines_dict)
-
-#### export dictionary
-#print 'Printing Dict\n', lines_dict 
-#pickle.dump(lines_dict, open("linesDict.p", "wb"))
-
-#### import dictionary
-lines_dict = pickle.load(open("./linesDict.p", "rb"))
-
-
-#### connect and add to/update db
-
-coll = connect_to_db('enhancertrap', 'dataset')
-add_to_db(coll, lines_dict)
-#update_db(coll, lines_dict)
-
-print [x for x in coll.find()]
+# Run script with corresponding flag
+main(file_path, flag)
 
