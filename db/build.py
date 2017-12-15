@@ -35,17 +35,21 @@ def build_dict(file_path):
 
 def to_dict_add_image_paths(file_path, dictionary):
      for key in dictionary:
-          old_tif_path = glob.glob('%s/../app/assets/images/*%s*.tif'
-                    % (file_path, key))
+          old_tif_path = [p for p in glob.glob('%s/../app/assets/images/*%s*.tif'
+                    % (file_path, key)) if '16bit' not in p]
+          old_16bit_tif_path = [p for p in glob.glob('%s/../app/assets/images/*%s*.tif'
+                    % (file_path, key)) if '16bit' in p]
           old_jpeg_path = glob.glob('%s/../app/assets/images/*%s*.jpeg'
                     % (file_path, key))
           if old_tif_path and old_jpeg_path:
                new_tif_path = 'images/%s' % ntpath.basename(old_tif_path[0])
+               new_16bit_tif_path = 'images/%s' % ntpath.basename(old_16bit_tif_path[0])
                new_jpeg_path = 'images/%s' % ntpath.basename(old_jpeg_path[0])
                dictionary[key]['TIF'] = new_tif_path 
+               dictionary[key]['TIF16'] = new_16bit_tif_path
                dictionary[key]['JPEG'] = new_jpeg_path 
           else:
-               print 'Add Image Path Error, %s, tif:%s, jpg:%s' % (key, old_tif_path, old_jpeg_path)
+               print 'Add Image Path Error, %s, tif:%s, 16tif:%s, jpg:%s' % (key, old_tif_path, old_16bit_tif_path, old_jpeg_path)
                return
 
      print 'Added Image Srcs to Dict'

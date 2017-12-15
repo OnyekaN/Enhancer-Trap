@@ -156,7 +156,7 @@ a {
 	top: 10px;
 }
 .footer p {
-	color: #ccc;
+	color: #fff;
 	font-family: "Helvetica Neue", sans-serif;
 	font-size: 0.8em;
 	-webkit-font-smoothing: antialiased;
@@ -185,7 +185,8 @@ a {
 }
 
 .lines-info #annotations {
-	height: 250px;
+	min-height: 50px;
+	max-height: 250px;	
 	overflow: scroll;
 	padding: 15px;
 	width: 600px;
