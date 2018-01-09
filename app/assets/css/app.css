@@ -185,7 +185,7 @@ a {
 }
 
 .lines-info #annotations {
-	min-height: 50px;
+	min-height: 75px;
 	max-height: 250px;	
 	overflow: scroll;
 	padding: 15px;
