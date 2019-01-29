@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "devel": "node_modules/nodemon/bin/nodemon.js ./bin/www",
-    "prod": "NODE_ENV=production node ./bin/www",
+    "start": "mongod & node ./bin/www",
+    "devel": "mongod & node_modules/nodemon/bin/nodemon.js ./bin/www",
+    "prod": "mongod & NODE_ENV=production node ./bin/www",
     "build": "NODE_ENV=production webpack -p --config ./webpack.config.js"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.2",
+    "sass": "^1.14.3",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },

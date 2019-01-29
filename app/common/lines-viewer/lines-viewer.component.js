@@ -4,10 +4,10 @@ import LinesViewerController from './lines-viewer.controller';
 
 const LinesViewerComponent = {
 	bindings: {
-		lineData: '<'
+		lineData: '<',
 	},
 	controller: LinesViewerController,
-	templateUrl: 'views/lines-viewer/lines-viewer.html'	
+	templateUrl: 'views/lines-viewer/lines-viewer.html',
 }
 
 export default LinesViewerComponent;

@@ -1,10 +1,4 @@
-import os
-import sys
-import csv
-import glob
-import ntpath
-import operator
-import pickle
+import os, sys, csv, glob, ntpath, operator, pickle
 from pymongo import MongoClient
 
 flag = sys.argv[1]
@@ -19,7 +13,7 @@ def build_dict(file_path):
 
           linesDict = dict()
           line = dict()
-               
+
           for i, row in enumerate(csvreader):
                for j, col in enumerate(row):
                     if i == 0:
@@ -45,9 +39,9 @@ def to_dict_add_image_paths(file_path, dictionary):
                new_tif_path = 'images/%s' % ntpath.basename(old_tif_path[0])
                new_16bit_tif_path = 'images/%s' % ntpath.basename(old_16bit_tif_path[0])
                new_jpeg_path = 'images/%s' % ntpath.basename(old_jpeg_path[0])
-               dictionary[key]['TIF'] = new_tif_path 
+               dictionary[key]['TIF'] = new_tif_path
                dictionary[key]['TIF16'] = new_16bit_tif_path
-               dictionary[key]['JPEG'] = new_jpeg_path 
+               dictionary[key]['JPEG'] = new_jpeg_path
           else:
                print 'Add Image Path Error, %s, tif:%s, 16tif:%s, jpg:%s' % (key, old_tif_path, old_16bit_tif_path, old_jpeg_path)
                return
@@ -58,7 +52,7 @@ def to_dict_add_image_paths(file_path, dictionary):
 def connect_to_db(database, collection):
 
      client = MongoClient()
-     db = client[database] 
+     db = client[database]
      db.drop_collection(collection)
      return db[collection]
 
@@ -73,31 +67,30 @@ def update_db(collection, dictionary):
      for key in dictionary:
           updates.append(collection.find_and_modify(
                query={'Line Number': dictionary[key]['Line Number']},
-               update={'$set': {'TIF': dictionary[key]['TIF'], 
-                              'JPEG': dictionary[key]['JPEG']}}, 
+               update={'$set': {'TIF': dictionary[key]['TIF'],
+                              'JPEG': dictionary[key]['JPEG']}},
                upsert='false'))
     # print [update for update in updates]
 
 
 def main(file_path, flag):
-     # If dry run, output results of attempts to build dict and add image paths
-     if flag == 'dry':
-          lines_dict = build_dict(file_path)
-          to_dict_add_image_paths(file_path, lines_dict)
-     # Output built dict
-     elif flag == 'print':
-          lines_dict = build_dict(file_path)
-          to_dict_add_image_paths(file_path, lines_dict)
-          print 'Printing Dict\n', lines_dict
 
-     # If all clear, export dictionary with pickle
-     elif flag == 'pickle':
+
+     # If dry run, output and/or print results of attempts to build dict and add image paths
+     if flag is 'dry' or 'print':
+          lines_dict = build_dict(file_path)
+          to_dict_add_image_paths(file_path, lines_dict)
+          if flag =='print':
+               print 'Printing Dict\n', lines_dict
+
+     # Export dictionary with pickle
+     elif flag is 'pickle':
           lines_dict = build_dict(file_path)
           to_dict_add_image_paths(file_path, lines_dict)
           pickle.dump(lines_dict, open("%s/linesDict.p" % file_path, "wb"))
 
-     # Import pickled dictionary and add values to the db 
-     elif flag == 'update':
+     # Import pickled dictionary and add values to MongoDB coll
+     elif flag is 'update':
           lines_dict = pickle.load(open("%s/linesDict.p" % file_path, "rb"))
           coll = connect_to_db('enhancertrap', 'dataset')
           add_to_db(coll, lines_dict)

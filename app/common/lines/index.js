@@ -1,7 +1,7 @@
 /* lines/index.js */
 'use strict'
-import LinesComponent from './lines.component'
-import LinesService from './lines.service'
+import LinesComponent from './lines.component';
+import LinesService from './lines.service';
 
 const Lines = angular
 	.module('lines', [])
@@ -9,5 +9,5 @@ const Lines = angular
 	.service('LinesService', LinesService)
 	.name
 
-export default Lines
+export default Lines;
 

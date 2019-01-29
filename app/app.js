@@ -17,7 +17,7 @@ import Common from './common/index';
 				$stateProvider
 				.state('home', {
 					url: '/home',
-					templateUrl: '/home.html'
+					templateUrl: 'views/home.html'
 				})
 				.state('about', {
 					url: '/about',
@@ -25,7 +25,7 @@ import Common from './common/index';
 				})
 				$urlRouterProvider.when('/', '/home');
 				$urlRouterProvider.otherwise('/home');
-				//$locationProvider.html5Mode(true);
+				// $locationProvider.html5Mode(true);
 			}])
 		.name;
 })()

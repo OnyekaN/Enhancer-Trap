@@ -3,16 +3,17 @@
 
 class LinesViewerService {
 	constructor($http) {
-		this.$http = $http
-		this.line = undefined
+		this.$http = $http;
+		this.line = undefined;
 	}
+	// GET line data as json
 	getLine(id) {
 		return this.$http.get('api/' + id)
 						.then(response => response.data)
-						.catch(e => console.log(e))	
+						.catch(e => console.log(e));
 	}
 }
 
-LinesViewerService.$inject = ['$http']
+LinesViewerService.$inject = ['$http'];
 
-export default LinesViewerService
+export default LinesViewerService;

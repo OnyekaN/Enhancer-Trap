@@ -68,14 +68,14 @@
 		angular.module('eTRapp', [_angularUiRouter2.default, _index2.default]).config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider) {
 			$stateProvider.state('home', {
 				url: '/home',
-				templateUrl: '/home.html'
+				templateUrl: 'views/home.html'
 			}).state('about', {
 				url: '/about',
 				templateUrl: 'views/about.html'
 			});
 			$urlRouterProvider.when('/', '/home');
 			$urlRouterProvider.otherwise('/home');
-			//$locationProvider.html5Mode(true);
+			// $locationProvider.html5Mode(true);
 		}]).name;
 	})();
 
@@ -4915,15 +4915,17 @@
 			_classCallCheck(this, LinesViewerController);
 
 			this.LinesViewerService = LinesViewerService;
-			this.line = this.lineData[0];
+			this.line = this.lineData[0]; // lineData resolved on load in ./index.js, bound in ./*component.js
 			if (!this.line.Annotations.length) {
 				this.line.Annotations = ["In Progress"];
 			}
 		}
 
 		_createClass(LinesViewerController, [{
-			key: '$onInit',
-			value: function $onInit() {}
+			key: "$onInit",
+			value: function $onInit() {
+				this.zbrainref = "https://engertlab.fas.harvard.edu/Z-Brain/#/home/line/MH" + this.line["Line Number"] + "-Gal4";
+			}
 		}]);
 
 		return LinesViewerController;
@@ -4955,6 +4957,8 @@
 			this.$http = $http;
 			this.line = undefined;
 		}
+		// GET line data as json
+
 
 		_createClass(LinesViewerService, [{
 			key: 'getLine',
@@ -5065,7 +5069,7 @@
 		function NavService() {
 			_classCallCheck(this, NavService);
 
-			this.pages = [{ name: 'Home', link: '#/home' }, { name: 'About', link: '#/about' }, { name: 'Engert Lab Website', link: 'http://labs.mcb.harvard.edu/Engert/#' }, { name: 'Z-Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }];
+			this.pages = [{ name: 'Home', link: '#/home' }, { name: 'About', link: '#/about' }, { name: 'Z Brain Atlas', link: 'http://engertlab.fas.harvard.edu/Z-Brain/' }, { name: 'Zebrafish EM', link: 'http://hildebrand16.neurodata.io/catmaid/?pid=6&zp=537540&yp=351910.65&xp=303051.45&tool=tracingtool&sg=2&sgs=4' }, { name: 'Multiscale Virtual Fish', link: 'http://www.zib.de/projects/multiscale-virtual-fish' }];
 		}
 
 		_createClass(NavService, [{

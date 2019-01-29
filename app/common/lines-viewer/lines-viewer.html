@@ -1,43 +1,30 @@
 <!--lines-viewer.html-->
 
-		<div class="lines-viewer container-fluid">
-		<a name="top"></a>	
-			<div class="lines-viewer row">
-				<div class="col-md-9 col-sm-offset-2 col-sm-10 col-xs-8">
-					<h2>Line Number: <b>{{$ctrl.line["Line Number"]}}</b></h2>
-					<br>
-					<img ng-src="{{$ctrl.line.JPEG}}"
-						alt="Line JPEG image">
-					</img>
-					<p style="font-family:Times serif;color:#aaa;" align="">
-					*Use the buttons below to order this line or to download the TIF
-					Stack
-					</p>
+	<div class="nav-background"></div>
 
-				</div>
-			</div>
+	<div class="lines-viewer"><a name="top"></a>	
+
+		<div class="line-image-container">
+			<h2>Line Noº <b>{{$ctrl.line["Line Number"]}}</b></h2><br>
+			<img class="line-image" ng-src="{{$ctrl.line.JPEG}}" alt="Line JPEG image"/>
+		</div>
 			
-			<div class="row lines-info">	
-				<div id="annotations" class="col-md-6 col-sm-7 col-sm-offset-2
-				col-xs-3">
-					<span id="annotations-title">Annotations</span>	
-					<ul id="annotations-list">
-						<br>
-						<li ng-repeat="ann in $ctrl.line.Annotations">{{ann}}</li>
-					</ul>	
-				</div>
+		<div class="line-info">	
+			<div class="line-annotations">
+				<h3>Annotations</h3>	
+				<ul>
+					<li ng-repeat="annotations in $ctrl.line.Annotations">
+						{{annotations}} | </li>
+				</ul>
 			</div>
-
-			
-			<div class="row lines-info buttons" style="margin-top:5px">
-
-				<div class="col-md-8 col-sm-12 col-sm-offset-2 col-xs-10">
-					<span id="buttons">
-						<span><a class="btn btn-default"
-							href="#/home" role="button">
-							Home Page</a>
-						</span>
+	
+			<div class="buttons">
+				<a class="home" href="#/home"><button>Back to Home Page</button></a>
+				<a class="home" ng-href="{{$ctrl.zbrainref}}">
+					<button>Show in Z Brain Atlas</button>
+				</a>
 						<span><a class="btn btn-primary"
+						
 							ng-href="mailto:florian@mcb.harvard.edu?subject=Placing 
 							Order for Enhancer Trap line&body=Hi,%0D%0A%0D%0A
 							I would like to place an order for Enhancer Trap line number 
@@ -57,5 +44,5 @@
 				</div>
 			</div>
 
-		</div container-fluid>
+		</div>
 

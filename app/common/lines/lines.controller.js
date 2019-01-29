@@ -8,7 +8,7 @@ class LinesController {
 		this.displayLines = {};
 		this.LinesService = LinesService;
 	}
-	
+
 	$onInit() {
 		this.LinesService.getLines().then(response => this.allLines = response);
 	}

@@ -5,7 +5,7 @@ import LinesViewerComponent from './lines-viewer.component';
 import LinesViewerService from './lines-viewer.service';
 
 const LinesViewer = angular
-	.module('LinesViewer', [ 
+	.module('LinesViewer', [
 		uiRouter
 	])
 	.component('linesViewerComponent', LinesViewerComponent)
@@ -20,16 +20,16 @@ const LinesViewer = angular
           template: `<lines-viewer-component line-data="$resolve.line"></lines-viewer-component>`,
 					resolve: {
 						line: [
-							'$stateParams', 
-							'LinesViewerService', 
+							'$stateParams',
+							'LinesViewerService',
 							($stateParams, LinesViewerService) => {
-								return LinesViewerService.getLine($stateParams.id)
+								return LinesViewerService.getLine($stateParams.id);
 							}
 						]
 					},
         })
-			$urlRouterProvider.otherwise('/')
-    }])	
+			$urlRouterProvider.otherwise('/');
+    }])
 	.name;
 
 export default LinesViewer;

@@ -74,9 +74,10 @@ a {
 	font-style: normal;
 }
 .select-image option {
+	min-width: 355px;
 	width: 100%;
 	color: #246;
-	font-family: palatino !important;	  
+	font-family: palatino !important;
 	font-size: 0.9em;
 	-webkit-font-smoothing: antialiased;
 	transition: background-color 0.2s ease;
