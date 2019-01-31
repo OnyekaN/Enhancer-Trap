@@ -67,19 +67,28 @@ a {
   position: relative;
   height: 230px;
   min-width: 1000px;
-  margin: 10px 30px 0 10px;
-  overflow: scroll; }
+  margin: 10px 30px 10px 40px;
+  overflow: visible; }
   .selects .select-container {
     min-width: 100px; }
-  .selects .select-by-annotation {
+  .selects select {
+    background-color: #eeeeee44;
     position: relative;
     display: inline;
+    opacity: 1;
+    transition: all 200ms ease;
+    border-radius: 5px;
+    border: 1px solid #888;
+    padding: 5px 5px 5px 10px;
+    box-shadow: 0px 0px 20px 10px #88888822; }
+    .selects select:hover {
+      opacity: 1; }
+  .selects .select-by-annotation {
     min-width: 600px;
     width: 70vw;
-    height: 200px; }
+    height: 200px;
+    margin-right: 10px; }
   .selects .select-by-number {
-    position: relative;
-    display: inline;
     width: 150px;
     height: 200px; }
 
@@ -95,22 +104,19 @@ a {
     flex-wrap: wrap;
     justify-content: flex-start; }
   .thumbs img {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 3px;
     height: 160px;
     width: 405px; }
   .thumbs .thumb {
-    background-color: #fff;
-    #border: 1px solid #ccc;
-    #box-shadow: 2px 2px 3px #c3c3c3;
-    margin: 1em 0.5em;
-    width: 430px;
-    padding: 1em 1em;
     position: relative;
+    margin: 0px 3% 10px 5%;
+    background-color: #fff;
+    box-shadow: 0 0 30px -10px #c3c3c322;
     transition: all 0.2s ease; }
-  .thumbs .thumb:hover {
-    box-shadow: 0px 0px 10px #b3b3b3;
-    transform: scale(1.01); }
+    .thumbs .thumb:hover {
+      box-shadow: 0 0 30px -10px #b3b3b322;
+      transform: scale(1.01); }
   .thumbs .thumb h4 {
     color: #ccc !important;
     font-family: helvetica;
@@ -155,18 +161,28 @@ a {
   padding-top: 10px; }
   .lines-viewer .line-image-container {
     padding-left: 40px; }
+    .lines-viewer .line-image-container h2 {
+      font-family: 'Helvetica Neue';
+      font-weight: 100;
+      text-shadow: 0 0 3px 5px #cccccccc; }
   .lines-viewer .line-image {
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0px 0px 30px 10px #cccccc33;
     height: 370px;
-    width: 900px; }
+    width: 900px;
+    margin: 10px 0 20px 0;
+    border-radius: 4px; }
+  .lines-viewer .line-annotations {
+    padding: 0 30px 0 0; }
   .lines-viewer .line-info {
-    min-height: 400px; }
+    min-height: 400px;
+    width: 1000px; }
     .lines-viewer .line-info h3 {
-      color: #49c;
+      font-family: palatino;
+      color: transparent;
       margin-left: 40px;
       font-size: 2em; }
     .lines-viewer .line-info ul {
-      margin: 20px 0 0 50px;
+      margin: 20px 0 0 60px;
       padding-left: 0; }
       .lines-viewer .line-info ul li {
         font-family: "Helvetica Neue";
@@ -174,7 +190,14 @@ a {
         font-size: 2em;
         display: inline; }
   .lines-viewer .buttons {
-    margin: 30px 0 0 40px; }
+    margin: 40px 0 0 40px; }
+    .lines-viewer .buttons a:hover {
+      text-decoration: none;
+      outline: none; }
+    .lines-viewer .buttons button {
+      margin-right: 10px;
+      border-radius: 5px;
+      height: 30px; }
 
 .lines-info #annotations {
   min-height: 75px;

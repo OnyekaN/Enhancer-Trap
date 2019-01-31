@@ -22,11 +22,11 @@ class SelectController {
 		this.$scope.$watch('selectedAnnotations', this.selectionChanged());
 		this.$scope.$watch('selectedLineNumbers', this.selectionChanged());
 	}
-	
+
 	selectionChanged(newVal, oldVal) {
 		return (newVal, oldVal) => {
 			this.$scope.$parent.$broadcast('selectionChange', newVal);
-		}	
+		}
 	}
 
 }
