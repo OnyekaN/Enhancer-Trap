@@ -10,7 +10,8 @@ class LinesViewerController {
 		}
 	}
 	$onInit() {
-		this.zbrainref = `https://engertlab.fas.harvard.edu/Z-Brain/#/home/line/MH${this.line["Line Number"]}-Gal4`;
+		console.log(this.line);
+		this.zbrainref = `https://engertlab.fas.harvard.edu/Z-Brain/#/home/line/MH_${this.line["Line Number"]}-Gal4`;
 	}
 }
 

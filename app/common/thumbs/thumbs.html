@@ -2,7 +2,7 @@
 <div class="thumbs-container">
 
 	<div class="thumb" ng-repeat="line in $ctrl.displayLines">
-		<h4 class="center">{{::line["Line Number"]}}</h4>
+		<h4 class="center">MH_{{::line["Line Number"]}}</h4>
 		<a ng-href="#/lines-viewer/{{::line['Line Number']}}#top">
 			<img ng-src="{{::line.JPEG}}" alt="Line JPEG image"></img>
 		</a>
